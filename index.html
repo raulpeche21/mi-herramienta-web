@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora Airbnb vs Alquiler Tradicional: rentabilidad neta real con impuestos</title>
+<meta name="description" content="Compara la rentabilidad neta de un alquiler turístico (Airbnb) frente a uno tradicional en España: IRPF, comisiones, limpieza, suministros y ROI real. Resultados en tiempo real.">
+<link rel="canonical" href="https://TUDOMINIO.com/">
+<meta property="og:title" content="¿Airbnb o alquiler tradicional? Calcula tu rentabilidad neta real">
+<meta property="og:description" content="Simulador gratuito con IRPF, comisiones y ocupación de equilibrio.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<!-- ADSENSE SCRIPT: se carga solo si el usuario acepta cookies (ver función loadAds al final). Sustituye ca-pub-XXXXXXXXXXXXXXXX por tu ID -->
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--paper:#F6F7F4;--ink:#10302C;--air:#D9820B;--trad:#2F5D8C;--ok:#1E7B4F;--bad:#B3372B;--line:#DADFD8}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif}
+h1,h2,h3,.disp{font-family:'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.02em}
+input[type=range]{accent-color:var(--ink)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:10px}
+.slot{border:1.5px dashed #b9c2b8;background:repeating-linear-gradient(45deg,#f0f2ee,#f0f2ee 10px,#e9ece6 10px,#e9ece6 20px);color:#7b877a;text-align:center;font-size:12px;display:flex;align-items:center;justify-content:center}
+.bar{height:14px;border-radius:3px;min-width:2px}
+dialog{max-width:560px;width:92%;border-radius:10px;padding:24px;border:1px solid var(--line)}
+dialog::backdrop{background:rgba(16,48,44,.5)}
+:focus-visible{outline:3px solid var(--air);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="border-b" style="border-color:var(--line)">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <span class="disp font-extrabold text-lg">AlquilerNeto</span>
+    <button id="shareBtn" class="text-sm font-semibold underline underline-offset-4">Compartir simulación</button>
+  </div>
+</header>
+
+<!-- ADSENSE BANNER TOP (728x90 escritorio / 320x100 móvil) -->
+<div class="max-w-6xl mx-auto px-4 mt-4">
+  <div class="slot h-[90px]" id="adTop">ADSENSE BANNER TOP
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000001" data-ad-format="horizontal" data-full-width-responsive="true"></ins> -->
+  </div>
+</div>
+
+<main class="max-w-6xl mx-auto px-4 py-8">
+  <h1 class="text-3xl md:text-5xl font-extrabold max-w-3xl leading-tight">¿Te renta más el Airbnb o el alquiler de toda la vida, después de impuestos?</h1>
+  <p class="mt-3 text-lg max-w-2xl text-slate-700">Mueve los deslizadores y ve al instante el beneficio neto anual, el ROI real y la ocupación a partir de la cual el alquiler turístico gana.</p>
+
+  <div class="grid lg:grid-cols-5 gap-6 mt-8">
+    <!-- INPUTS -->
+    <section class="lg:col-span-2 panel p-5" aria-label="Datos de tu vivienda">
+      <div id="form"></div>
+      <label class="flex items-start gap-2 text-sm mt-2"><input type="checkbox" id="red" checked class="mt-1">
+        <span>Aplicar la reducción del 50% en el alquiler tradicional (vivienda habitual del inquilino). Desmárcala si no cumples los requisitos.</span></label>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="lg:col-span-3" aria-live="polite" aria-label="Resultados">
+      <div id="res"></div>
+
+      <!-- ADSENSE BANNER IN-CONTENT (336x280 / responsive) -->
+      <div class="slot h-[280px] my-6" id="adMid">ADSENSE BANNER IN-CONTENT
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000002" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+      </div>
+    </section>
+  </div>
+
+  <!-- AFILIADOS -->
+  <section class="mt-10" aria-label="Herramientas recomendadas">
+    <h2 class="text-2xl font-extrabold">Herramientas que suben tu beneficio neto</h2>
+    <p class="text-slate-600 mt-1">Enlaces de afiliación: si contratas alguna, recibimos una comisión sin coste extra para ti.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+      <!-- Sustituye cada href por tu enlace de afiliado -->
+      <a href="https://TU-ENLACE-AFILIADO-PRECIOS" rel="sponsored noopener" target="_blank" class="panel p-4 block hover:border-slate-500">
+        <h3 class="font-extrabold">Precios dinámicos</h3><p class="text-sm mt-1 text-slate-600">Ajusta tarifa por demanda y sube la ocupación efectiva. Ej.: PriceLabs, Beyond.</p><span class="text-sm font-semibold mt-3 inline-block" style="color:var(--air)">Ver herramienta</span></a>
+      <a href="https://TU-ENLACE-AFILIADO-CERRADURAS" rel="sponsored noopener" target="_blank" class="panel p-4 block hover:border-slate-500">
+        <h3 class="font-extrabold">Cerraduras inteligentes</h3><p class="text-sm mt-1 text-slate-600">Check-in autónomo y menos coste de gestión. Ej.: Nuki.</p><span class="text-sm font-semibold mt-3 inline-block" style="color:var(--air)">Ver opciones</span></a>
+      <a href="https://TU-ENLACE-AFILIADO-CHANNEL" rel="sponsored noopener" target="_blank" class="panel p-4 block hover:border-slate-500">
+        <h3 class="font-extrabold">Gestor de canales</h3><p class="text-sm mt-1 text-slate-600">Sincroniza calendarios y mensajes automáticos. Ej.: Hospitable, Smoobu.</p><span class="text-sm font-semibold mt-3 inline-block" style="color:var(--air)">Comparar</span></a>
+      <a href="https://TU-ENLACE-AFILIADO-SEGURO" rel="sponsored noopener" target="_blank" class="panel p-4 block hover:border-slate-500">
+        <h3 class="font-extrabold">Seguro de alquiler</h3><p class="text-sm mt-1 text-slate-600">Cobertura de impago y daños para alquiler tradicional o turístico.</p><span class="text-sm font-semibold mt-3 inline-block" style="color:var(--air)">Pedir presupuesto</span></a>
+    </div>
+  </section>
+
+  <!-- CONTENIDO SEO (necesario para AdSense) -->
+  <section class="mt-12 max-w-3xl">
+    <h2 class="text-2xl font-extrabold">Cómo interpretar la comparación</h2>
+    <div class="mt-4 space-y-3">
+      <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Cómo calcula la calculadora el beneficio neto del Airbnb?</summary>
+        <p class="mt-2 text-slate-700">Ingresos = noches ocupadas × precio por noche. Se restan la comisión de la plataforma, la limpieza por cada estancia, los suministros, la gestión, el IBI, la comunidad y el seguro. Sobre el beneficio resultante se aplica el tipo de IRPF que indiques.</p></details>
+      <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Por qué el alquiler tradicional tributa menos?</summary>
+        <p class="mt-2 text-slate-700">En España, el arrendamiento de vivienda habitual puede aplicar una reducción del 50% (o mayor en zonas tensionadas) sobre el rendimiento neto. El alquiler turístico no suele tener esa reducción, por lo que el Airbnb necesita más ocupación para compensarlo.</p></details>
+      <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Qué es la ocupación de equilibrio?</summary>
+        <p class="mt-2 text-slate-700">Es el porcentaje de ocupación a partir del cual el alquiler turístico iguala el neto anual del tradicional. Si tu ocupación realista está por debajo, el alquiler tradicional es la opción más rentable y con menos trabajo.</p></details>
+      <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Qué no incluye este cálculo?</summary>
+        <p class="mt-2 text-slate-700">No incluye IVA, amortización del inmueble, licencias autonómicas o municipales, tasas turísticas, financiación ni tu trabajo personal. Los resultados son orientativos: consulta a un asesor fiscal antes de decidir.</p></details>
+    </div>
+  </section>
+</main>
+
+<!-- ADSENSE BANNER FOOTER -->
+<div class="max-w-6xl mx-auto px-4 mb-6">
+  <div class="slot h-[90px]" id="adBottom">ADSENSE BANNER FOOTER</div>
+</div>
+
+<footer class="border-t py-8 text-sm text-slate-600" style="border-color:var(--line)">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-3 justify-between">
+    <p>© <span id="yr"></span> AlquilerNeto. Herramienta orientativa; no constituye asesoramiento fiscal ni financiero.</p>
+    <nav class="flex gap-4">
+      <button class="underline" onclick="document.getElementById('dLegal').showModal()">Aviso Legal</button>
+      <button class="underline" onclick="document.getElementById('dPriv').showModal()">Privacidad y cookies</button>
+      <button class="underline" onclick="resetCookies()">Configurar cookies</button>
+    </nav>
+  </div>
+</footer>
+
+<dialog id="dLegal"><h2 class="text-xl font-extrabold">Aviso Legal</h2>
+  <div class="text-sm mt-3 space-y-2 text-slate-700">
+    <p>Titular: [TU NOMBRE O RAZÓN SOCIAL], NIF [TU NIF], domicilio [TU DIRECCIÓN], contacto: [TU EMAIL]. Sitio web: https://TUDOMINIO.com (Ley 34/2002, LSSI-CE).</p>
+    <p>Los cálculos son estimaciones con fines informativos y no sustituyen el consejo de un profesional. El titular no responde de decisiones tomadas a partir de los resultados.</p>
+    <p>Este sitio contiene enlaces de afiliación por los que el titular puede percibir comisiones. Todos los contenidos son propiedad del titular salvo indicación contraria.</p>
+  </div><form method="dialog" class="mt-4"><button class="px-4 py-2 rounded text-white" style="background:var(--ink)">Cerrar</button></form></dialog>
+
+<dialog id="dPriv"><h2 class="text-xl font-extrabold">Política de Privacidad y Cookies</h2>
+  <div class="text-sm mt-3 space-y-2 text-slate-700">
+    <p>Responsable: [TU NOMBRE], [TU EMAIL]. Esta herramienta calcula en tu navegador: los datos que introduces no se envían ni se almacenan en ningún servidor.</p>
+    <p>Cookies: usamos una cookie técnica para recordar tu elección. Si aceptas, terceros como Google AdSense pueden usar cookies para mostrar anuncios personalizados y medir su rendimiento. Puedes cambiar tu decisión en "Configurar cookies". Más información: policies.google.com/technologies/ads.</p>
+    <p>Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo al correo indicado, o ante la AEPD (aepd.es).</p>
+  </div><form method="dialog" class="mt-4"><button class="px-4 py-2 rounded text-white" style="background:var(--ink)">Cerrar</button></form></dialog>
+
+<!-- COOKIES -->
+<div id="ck" class="hidden fixed bottom-0 inset-x-0 z-50 p-4" role="dialog" aria-label="Aviso de cookies">
+  <div class="max-w-3xl mx-auto bg-white border rounded-lg shadow-lg p-4 flex flex-col sm:flex-row gap-3 sm:items-center" style="border-color:var(--ink)">
+    <p class="text-sm flex-1">Usamos cookies propias y de terceros (Google AdSense) para mostrar anuncios y analizar el uso. Puedes aceptarlas o rechazarlas. <button class="underline" onclick="document.getElementById('dPriv').showModal()">Más información</button></p>
+    <div class="flex gap-2">
+      <button id="ckNo" class="px-4 py-2 border rounded text-sm font-semibold">Rechazar</button>
+      <button id="ckYes" class="px-4 py-2 rounded text-sm font-semibold text-white" style="background:var(--ink)">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const eur=n=>new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+const pc=n=>n.toFixed(1).replace('.',',')+' %';
+
+// [id, etiqueta, min, max, paso, valor, unidad]
+const GROUPS=[
+ ['Inmueble y costes fijos',[
+  ['inversion','Inversión total (compra, reforma y mobiliario)',50000,800000,5000,200000,'€'],
+  ['ibi','IBI y tasas al año',0,3000,50,500,'€'],
+  ['comunidad','Comunidad al año',0,4000,50,900,'€'],
+  ['seguro','Seguro del hogar al año',0,1500,25,300,'€']]],
+ ['Alquiler turístico (Airbnb)',[
+  ['precio','Precio medio por noche',30,400,5,110,'€'],
+  ['ocupacion','Ocupación anual',10,100,1,65,'%'],
+  ['estancia','Duración media de estancia',1,14,0.5,3,'noches'],
+  ['comision','Comisión de la plataforma',0,25,0.5,15.5,'%'],
+  ['limpieza','Limpieza por estancia',0,150,5,40,'€'],
+  ['sumin','Suministros y consumibles al mes',0,500,10,150,'€'],
+  ['gestion','Gestión externa (% de ingresos)',0,30,1,0,'%']]],
+ ['Alquiler tradicional',[
+  ['alquiler','Alquiler mensual',300,4000,25,800,'€'],
+  ['vacio','Meses vacío al año',0,6,0.5,1,'meses']]],
+ ['Impuestos',[
+  ['irpf','Tipo marginal de IRPF',19,47,1,30,'%']]]
+];
+const IDS=GROUPS.flatMap(g=>g[1].map(f=>f[0]));
+
+// Construir formulario
+$('form').innerHTML=GROUPS.map(([t,fs])=>`<h2 class="text-lg font-extrabold mt-2 mb-3">${t}</h2>`+fs.map(([id,l,mn,mx,st,v,u])=>`
+ <div class="mb-4"><div class="flex justify-between items-end gap-2 text-sm mb-1">
+  <label for="${id}" class="font-semibold">${l}</label>
+  <span class="flex items-center gap-1 shrink-0"><input type="number" id="${id}_n" min="${mn}" max="${mx}" step="${st}" value="${v}" class="w-24 border rounded px-2 py-1 text-right" aria-label="${l} (valor exacto)"><span class="text-slate-500 w-10">${u}</span></span></div>
+  <input type="range" id="${id}" min="${mn}" max="${mx}" step="${st}" value="${v}" class="w-full"></div>`).join('')).join('');
+IDS.forEach(id=>{
+  $(id).addEventListener('input',()=>{$(id+'_n').value=$(id).value;update()});
+  $(id+'_n').addEventListener('input',()=>{$(id).value=$(id+'_n').value;update()});
+});
+$('red').addEventListener('change',update);
+
+function read(){const v={};IDS.forEach(id=>v[id]=parseFloat($(id+'_n').value)||0);v.red=$('red').checked;return v}
+
+function airbnb(v,occ){
+  const noches=365*occ/100, ing=noches*v.precio, est=noches/Math.max(v.estancia,1);
+  const comision=ing*v.comision/100, limpieza=est*v.limpieza, sumin=v.sumin*12,
+        fijos=v.ibi+v.comunidad+v.seguro, gestion=ing*v.gestion/100;
+  const bruto=ing-comision-limpieza-sumin-fijos-gestion;
+  const imp=Math.max(0,bruto)*v.irpf/100;
+  return {ing,comision,limpieza,sumin,fijos,gestion,bruto,imp,neto:bruto-imp,noches};
+}
+function trad(v){
+  const ing=v.alquiler*Math.max(0,12-v.vacio), fijos=v.ibi+v.comunidad+v.seguro, bruto=ing-fijos;
+  const base=Math.max(0,bruto)*(v.red?0.5:1), imp=base*v.irpf/100;
+  return {ing,fijos,bruto,imp,neto:bruto-imp};
+}
+function breakeven(v,tNeto){
+  for(let o=0;o<=100;o+=0.5){if(airbnb(v,o).neto>=tNeto)return o}
+  return null;
+}
+const col=n=>n>=0?'var(--ok)':'var(--bad)';
+const row=(l,a,b,bold)=>`<tr class="border-t" style="border-color:var(--line)${bold?';font-weight:700':''}"><td class="py-2 pr-2">${l}</td><td class="py-2 text-right">${a}</td><td class="py-2 text-right">${b}</td></tr>`;
+
+let last='';
+function update(){
+  const v=read(), a=airbnb(v,v.ocupacion), t=trad(v), inv=Math.max(v.inversion,1);
+  const dif=a.neto-t.neto, win=dif>=0, be=breakeven(v,t.neto);
+  const roiA=a.neto/inv*100, roiT=t.neto/inv*100;
+
+  const verdict=win
+    ? `El alquiler turístico gana por <b>${eur(Math.abs(dif))}</b> al año (${eur(Math.abs(dif)/12)} al mes).`
+    : `El alquiler tradicional gana por <b>${eur(Math.abs(dif))}</b> al año (${eur(Math.abs(dif)/12)} al mes) y con menos trabajo.`;
+  const beTxt=be===null?'Con estos datos, el Airbnb no iguala al tradicional ni con el 100% de ocupación.'
+    :be<=0?'El Airbnb gana incluso con ocupación mínima.'
+    :`El Airbnb empieza a ganar a partir del <b>${be.toFixed(1).replace('.',',')} %</b> de ocupación. Tu ocupación actual es ${v.ocupacion} %.`;
+  last=`Airbnb: ${eur(a.neto)}/año (ROI ${pc(roiA)}). Tradicional: ${eur(t.neto)}/año (ROI ${pc(roiT)}). Ocupación de equilibrio: ${be===null?'no alcanzable':be.toFixed(1)+' %'}.`;
+
+  // Reparto de cada euro de ingresos Airbnb
+  const parts=[['Comisión',a.comision,'#8a94a6'],['Limpieza',a.limpieza,'#a6b0c0'],['Suministros',a.sumin,'#c2c9d4'],['Gestión',a.gestion,'#7b8794'],['IBI, comunidad y seguro',a.fijos,'#6b7a99'],['IRPF',a.imp,'#b3372b'],['Beneficio neto',Math.max(0,a.neto),'#1e7b4f']];
+  const bars=a.ing>0?parts.map(([n,x,c])=>`<div class="flex items-center gap-2 text-sm mb-1"><span class="w-40 shrink-0">${n}</span><div class="flex-1"><div class="bar" style="width:${Math.min(100,Math.max(0,x/a.ing*100))}%;background:${c}"></div></div><span class="w-24 text-right">${eur(x)} · ${(x/a.ing*100).toFixed(0)}%</span></div>`).join(''):'<p class="text-sm">Sube la ocupación o el precio para ver el reparto.</p>';
+
+  // Sensibilidad por ocupación
+  const sens=[30,40,50,60,70,80,90].map(o=>{const s=airbnb(v,o),d=s.neto-t.neto;
+    return `<tr class="border-t" style="border-color:var(--line)"><td class="py-1">${o} %</td><td class="text-right">${eur(s.neto)}</td><td class="text-right">${pc(s.neto/inv*100)}</td><td class="text-right font-semibold" style="color:${col(d)}">${d>=0?'+':''}${eur(d)}</td></tr>`}).join('');
+
+  $('res').innerHTML=`
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div class="panel p-5" style="border-top:4px solid var(--air)"><p class="text-sm font-semibold">Airbnb, neto al año</p>
+      <p class="disp text-4xl font-extrabold mt-1" style="color:${col(a.neto)}">${eur(a.neto)}</p><p class="text-sm mt-1">ROI real ${pc(roiA)} · ${eur(a.neto/12)}/mes</p></div>
+    <div class="panel p-5" style="border-top:4px solid var(--trad)"><p class="text-sm font-semibold">Tradicional, neto al año</p>
+      <p class="disp text-4xl font-extrabold mt-1" style="color:${col(t.neto)}">${eur(t.neto)}</p><p class="text-sm mt-1">ROI real ${pc(roiT)} · ${eur(t.neto/12)}/mes</p></div>
+  </div>
+  <div class="panel p-5 mt-4" style="border-left:6px solid ${win?'var(--air)':'var(--trad)'}"><p class="text-lg">${verdict}</p><p class="mt-1 text-slate-700">${beTxt}</p></div>
+
+  <div class="panel p-5 mt-4 overflow-x-auto"><h2 class="text-lg font-extrabold mb-2">Desglose anual</h2>
+   <table class="w-full text-sm"><thead><tr class="text-left"><th></th><th class="text-right" style="color:var(--air)">Airbnb</th><th class="text-right" style="color:var(--trad)">Tradicional</th></tr></thead><tbody>
+    ${row('Ingresos brutos',eur(a.ing),eur(t.ing))}
+    ${row('Comisión de plataforma','−'+eur(a.comision),'—')}
+    ${row('Limpieza','−'+eur(a.limpieza),'—')}
+    ${row('Suministros','−'+eur(a.sumin),'—')}
+    ${row('Gestión externa','−'+eur(a.gestion),'—')}
+    ${row('IBI, comunidad y seguro','−'+eur(a.fijos),'−'+eur(t.fijos))}
+    ${row('Beneficio antes de impuestos',eur(a.bruto),eur(t.bruto),1)}
+    ${row('IRPF','−'+eur(a.imp),'−'+eur(t.imp))}
+    ${row('Beneficio neto',eur(a.neto),eur(t.neto),1)}
+    ${row('ROI neto sobre inversión',pc(roiA),pc(roiT),1)}
+    ${row('Noches ocupadas',Math.round(a.noches),'—')}
+   </tbody></table></div>
+
+  <div class="panel p-5 mt-4"><h2 class="text-lg font-extrabold mb-3">¿A dónde va cada euro del Airbnb?</h2>${bars}</div>
+
+  <div class="panel p-5 mt-4 overflow-x-auto"><h2 class="text-lg font-extrabold mb-2">Qué pasa si cambia la ocupación</h2>
+   <table class="w-full text-sm"><thead><tr class="text-left"><th>Ocupación</th><th class="text-right">Neto Airbnb</th><th class="text-right">ROI</th><th class="text-right">Frente al tradicional</th></tr></thead><tbody>${sens}</tbody></table></div>`;
+}
+
+// Compartir
+$('shareBtn').addEventListener('click',async()=>{
+  const txt='Calculadora Airbnb vs alquiler tradicional. '+last;
+  try{ if(navigator.share){await navigator.share({title:document.title,text:txt,url:location.href})}
+       else{await navigator.clipboard.writeText(txt+' '+location.href);$('shareBtn').textContent='Copiado';setTimeout(()=>$('shareBtn').textContent='Compartir simulación',1800)} }catch(e){}
+});
+
+// Cookies y AdSense (solo se carga si el usuario acepta)
+const ADS_CLIENT='ca-pub-XXXXXXXXXXXXXXXX';
+function loadAds(){
+  if(ADS_CLIENT.includes('XXXX')||document.getElementById('adsScript'))return;
+  const s=document.createElement('script');s.id='adsScript';s.async=true;s.crossOrigin='anonymous';
+  s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+ADS_CLIENT;document.head.appendChild(s);
+}
+function getCk(){try{return localStorage.getItem('ck')}catch(e){return null}}
+function setCk(x){try{localStorage.setItem('ck',x)}catch(e){}$('ck').classList.add('hidden');if(x==='yes')loadAds()}
+function resetCookies(){try{localStorage.removeItem('ck')}catch(e){}$('ck').classList.remove('hidden')}
+$('ckYes').onclick=()=>setCk('yes');$('ckNo').onclick=()=>setCk('no');
+const c=getCk(); if(!c)$('ck').classList.remove('hidden'); else if(c==='yes')loadAds();
+
+$('yr').textContent=new Date().getFullYear();
+update();
+</script>
+</body>
+</html>
