@@ -3,43 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calculadora Airbnb vs Alquiler Tradicional: rentabilidad neta real con impuestos</title>
+<title>CalculadoraRentabilidad.com — Airbnb vs Alquiler Tradicional: rentabilidad neta real con impuestos</title>
 <meta name="description" content="Compara la rentabilidad neta de un alquiler turístico (Airbnb) frente a uno tradicional en España: IRPF, comisiones, limpieza, suministros y ROI real. Resultados en tiempo real.">
-<link rel="canonical" href="https://TUDOMINIO.com/">
-<meta property="og:title" content="¿Airbnb o alquiler tradicional? Calcula tu rentabilidad neta real">
+<link rel="canonical" href="https://calculadorarentabilidad.com/">
+<link rel="icon" href="data:image/png;base64,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" type="image/png">
+<meta property="og:title" content="¿Airbnb o alquiler tradicional? Calcula tu rentabilidad neta real | CalculadoraRentabilidad.com">
 <meta property="og:description" content="Simulador gratuito con IRPF, comisiones y ocupación de equilibrio.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://calculadorarentabilidad.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <!-- ADSENSE SCRIPT: se carga solo si el usuario acepta cookies (ver función loadAds al final). Sustituye ca-pub-XXXXXXXXXXXXXXXX por tu ID -->
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-:root{--paper:#F6F7F4;--ink:#10302C;--air:#D9820B;--trad:#2F5D8C;--ok:#1E7B4F;--bad:#B3372B;--line:#DADFD8}
+:root{--paper:#F6F7F4;--ink:#10302C;--air:#D9820B;--air-text:#985B08;--trad:#2F5D8C;--ok:#1E7B4F;--bad:#B3372B;--line:#DADFD8}
 body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif}
 h1,h2,h3,.disp{font-family:'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.02em}
 input[type=range]{accent-color:var(--ink)}
 .panel{background:#fff;border:1px solid var(--line);border-radius:10px}
 .slot{border:1.5px dashed #b9c2b8;background:repeating-linear-gradient(45deg,#f0f2ee,#f0f2ee 10px,#e9ece6 10px,#e9ece6 20px);color:#7b877a;text-align:center;font-size:12px;display:flex;align-items:center;justify-content:center}
 .bar{height:14px;border-radius:3px;min-width:2px}
-dialog{max-width:560px;width:92%;border-radius:10px;padding:24px;border:1px solid var(--line)}
-dialog::backdrop{background:rgba(16,48,44,.5)}
-:focus-visible{outline:3px solid var(--air);outline-offset:2px}
+:focus-visible{outline:3px solid var(--air-text);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* Enlace de salto al contenido/resultado: invisible hasta recibir foco por teclado */
+.skip-link{position:absolute;left:8px;top:-48px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:6px;font-size:14px;font-weight:600;z-index:100;transition:top .15s ease}
+.skip-link:focus{top:8px}
+/* Área táctil mínima de 44x44px en botones interactivos (WCAG 2.5.5) */
+.tap-target{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;padding:8px 14px}
 </style>
 </head>
 <body>
+<a href="#res" class="skip-link">Ir al resultado</a>
 
 <header class="border-b" style="border-color:var(--line)">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <span class="disp font-extrabold text-lg">AlquilerNeto</span>
-    <button id="shareBtn" class="text-sm font-semibold underline underline-offset-4">Compartir simulación</button>
+    <a href="/" class="disp font-extrabold text-lg flex items-center gap-2" style="color:var(--ink);text-decoration:none">
+      <img src="data:image/png;base64,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" width="28" height="28" alt="" style="width:28px;height:28px;border-radius:6px">
+      <span>CalculadoraRentabilidad.com</span>
+    </a>
+    <button id="shareBtn" class="text-sm font-semibold underline underline-offset-4 tap-target">Compartir simulación</button>
   </div>
 </header>
 
-<!-- ADSENSE BANNER TOP (728x90 escritorio / 320x100 móvil) -->
-<div class="max-w-6xl mx-auto px-4 mt-4">
-  <div class="slot h-[90px]" id="adTop">ADSENSE BANNER TOP
+<!-- ADSENSE BANNER TOP (728x90 escritorio / 320x100 móvil): oculto hasta que haya un anuncio real
+     activo (ver loadAds()). Quitar la clase "hidden" cuando el ID real de AdSense esté cargando aquí. -->
+<div class="max-w-6xl mx-auto px-4 mt-4 hidden" id="adTopWrap">
+  <div class="slot h-[90px]" id="adTop">
     <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000001" data-ad-format="horizontal" data-full-width-responsive="true"></ins> -->
   </div>
 </div>
@@ -57,12 +67,15 @@ dialog::backdrop{background:rgba(16,48,44,.5)}
     </section>
 
     <!-- RESULTADOS -->
-    <section class="lg:col-span-3" aria-live="polite" aria-label="Resultados">
+    <section class="lg:col-span-3" aria-label="Resultados">
+      <!-- Región de estado breve y controlada para lectores de pantalla: evita que se anuncie
+           todo el bloque de resultados (tablas largas) en cada paso del deslizador. -->
+      <p id="resStatus" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
       <div id="res"></div>
 
-      <!-- ADSENSE BANNER IN-CONTENT (336x280 / responsive) -->
-      <div class="slot h-[280px] my-6" id="adMid">ADSENSE BANNER IN-CONTENT
-        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000002" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+      <!-- ADSENSE BANNER IN-CONTENT (336x280 / responsive): oculto hasta que haya un anuncio real activo. -->
+      <div class="slot h-[280px] my-6 hidden" id="adMidWrap">
+        <div id="adMid"><!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000002" data-ad-format="auto" data-full-width-responsive="true"></ins> --></div>
       </div>
     </section>
   </div>
@@ -106,46 +119,34 @@ dialog::backdrop{background:rgba(16,48,44,.5)}
   </section>
 </main>
 
-<!-- ADSENSE BANNER FOOTER -->
-<div class="max-w-6xl mx-auto px-4 mb-6">
-  <div class="slot h-[90px]" id="adBottom">ADSENSE BANNER FOOTER</div>
+<!-- ADSENSE BANNER FOOTER: oculto hasta que haya un anuncio real activo. -->
+<div class="max-w-6xl mx-auto px-4 mb-6 hidden" id="adBottomWrap">
+  <div class="slot h-[90px]" id="adBottom"></div>
 </div>
-
-<footer class="border-t py-8 text-sm text-slate-600" style="border-color:var(--line)">
-  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-3 justify-between">
-    <p>© <span id="yr"></span> AlquilerNeto. Herramienta orientativa; no constituye asesoramiento fiscal ni financiero.</p>
-    <nav class="flex gap-4">
-      <button class="underline" onclick="document.getElementById('dLegal').showModal()">Aviso Legal</button>
-      <button class="underline" onclick="document.getElementById('dPriv').showModal()">Privacidad y cookies</button>
-      <button class="underline" onclick="resetCookies()">Configurar cookies</button>
-    </nav>
-  </div>
-</footer>
-
-<dialog id="dLegal"><h2 class="text-xl font-extrabold">Aviso Legal</h2>
-  <div class="text-sm mt-3 space-y-2 text-slate-700">
-    <p>Titular: [TU NOMBRE O RAZÓN SOCIAL], NIF [TU NIF], domicilio [TU DIRECCIÓN], contacto: [TU EMAIL]. Sitio web: https://TUDOMINIO.com (Ley 34/2002, LSSI-CE).</p>
-    <p>Los cálculos son estimaciones con fines informativos y no sustituyen el consejo de un profesional. El titular no responde de decisiones tomadas a partir de los resultados.</p>
-    <p>Este sitio contiene enlaces de afiliación por los que el titular puede percibir comisiones. Todos los contenidos son propiedad del titular salvo indicación contraria.</p>
-  </div><form method="dialog" class="mt-4"><button class="px-4 py-2 rounded text-white" style="background:var(--ink)">Cerrar</button></form></dialog>
-
-<dialog id="dPriv"><h2 class="text-xl font-extrabold">Política de Privacidad y Cookies</h2>
-  <div class="text-sm mt-3 space-y-2 text-slate-700">
-    <p>Responsable: [TU NOMBRE], [TU EMAIL]. Esta herramienta calcula en tu navegador: los datos que introduces no se envían ni se almacenan en ningún servidor.</p>
-    <p>Cookies: usamos una cookie técnica para recordar tu elección. Si aceptas, terceros como Google AdSense pueden usar cookies para mostrar anuncios personalizados y medir su rendimiento. Puedes cambiar tu decisión en "Configurar cookies". Más información: policies.google.com/technologies/ads.</p>
-    <p>Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo al correo indicado, o ante la AEPD (aepd.es).</p>
-  </div><form method="dialog" class="mt-4"><button class="px-4 py-2 rounded text-white" style="background:var(--ink)">Cerrar</button></form></dialog>
 
 <!-- COOKIES -->
 <div id="ck" class="hidden fixed bottom-0 inset-x-0 z-50 p-4" role="dialog" aria-label="Aviso de cookies">
   <div class="max-w-3xl mx-auto bg-white border rounded-lg shadow-lg p-4 flex flex-col sm:flex-row gap-3 sm:items-center" style="border-color:var(--ink)">
-    <p class="text-sm flex-1">Usamos cookies propias y de terceros (Google AdSense) para mostrar anuncios y analizar el uso. Puedes aceptarlas o rechazarlas. <button class="underline" onclick="document.getElementById('dPriv').showModal()">Más información</button></p>
+    <p class="text-sm flex-1">Usamos cookies propias (técnicas) y, solo si las aceptas, de terceros (Google AdSense) para mostrar anuncios y analizar el uso. Puedes aceptarlas o rechazarlas con el mismo nivel de visibilidad. <a class="underline" href="/cookies.html">Más información</a></p>
     <div class="flex gap-2">
-      <button id="ckNo" class="px-4 py-2 border rounded text-sm font-semibold">Rechazar</button>
-      <button id="ckYes" class="px-4 py-2 rounded text-sm font-semibold text-white" style="background:var(--ink)">Aceptar</button>
+      <button id="ckNo" class="px-4 py-2 border rounded text-sm font-semibold tap-target">Rechazar</button>
+      <button id="ckYes" class="px-4 py-2 rounded text-sm font-semibold text-white tap-target" style="background:var(--ink)">Aceptar</button>
     </div>
   </div>
 </div>
+
+<!-- PIE DE PÁGINA Y ENLACES LEGALES: página única, sin duplicados. -->
+<footer class="border-t py-8 mt-4 text-sm text-slate-600" style="border-color:var(--line)">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-3 justify-between">
+    <p>© <span id="yr"></span> CalculadoraRentabilidad.com — Herramienta orientativa; no constituye asesoramiento fiscal, financiero ni jurídico.</p>
+    <nav class="flex flex-wrap gap-4">
+      <a class="underline tap-target" href="/aviso-legal.html">Aviso Legal</a>
+      <a class="underline tap-target" href="/privacidad.html">Privacidad</a>
+      <a class="underline tap-target" href="/cookies.html">Cookies</a>
+      <button class="underline tap-target" onclick="resetCookies()">Configurar cookies</button>
+    </nav>
+  </div>
+</footer>
 
 <script>
 const $=id=>document.getElementById(id);
@@ -210,6 +211,14 @@ const col=n=>n>=0?'var(--ok)':'var(--bad)';
 const row=(l,a,b,bold)=>`<tr class="border-t" style="border-color:var(--line)${bold?';font-weight:700':''}"><td class="py-2 pr-2">${l}</td><td class="py-2 text-right">${a}</td><td class="py-2 text-right">${b}</td></tr>`;
 
 let last='';
+let resStatusTimer=null;
+// Anuncia el veredicto a lectores de pantalla una sola vez, cuando el usuario
+// deja de mover el control (debounce), en vez de en cada evento "input" del
+// deslizador. El resultado visual (abajo) sigue actualizándose al instante.
+function announceStatus(text){
+  clearTimeout(resStatusTimer);
+  resStatusTimer=setTimeout(()=>{$('resStatus').textContent=text},600);
+}
 function update(){
   const v=read(), a=airbnb(v,v.ocupacion), t=trad(v), inv=Math.max(v.inversion,1);
   const dif=a.neto-t.neto, win=dif>=0, be=breakeven(v,t.neto);
@@ -222,6 +231,7 @@ function update(){
     :be<=0?'El Airbnb gana incluso con ocupación mínima.'
     :`El Airbnb empieza a ganar a partir del <b>${be.toFixed(1).replace('.',',')} %</b> de ocupación. Tu ocupación actual es ${v.ocupacion} %.`;
   last=`Airbnb: ${eur(a.neto)}/año (ROI ${pc(roiA)}). Tradicional: ${eur(t.neto)}/año (ROI ${pc(roiT)}). Ocupación de equilibrio: ${be===null?'no alcanzable':be.toFixed(1)+' %'}.`;
+  announceStatus(`${verdict} ${beTxt}`.replace(/<[^>]+>/g,''));
 
   // Reparto de cada euro de ingresos Airbnb
   const parts=[['Comisión',a.comision,'#8a94a6'],['Limpieza',a.limpieza,'#a6b0c0'],['Suministros',a.sumin,'#c2c9d4'],['Gestión',a.gestion,'#7b8794'],['IBI, comunidad y seguro',a.fijos,'#6b7a99'],['IRPF',a.imp,'#b3372b'],['Beneficio neto',Math.max(0,a.neto),'#1e7b4f']];
@@ -241,7 +251,7 @@ function update(){
   <div class="panel p-5 mt-4" style="border-left:6px solid ${win?'var(--air)':'var(--trad)'}"><p class="text-lg">${verdict}</p><p class="mt-1 text-slate-700">${beTxt}</p></div>
 
   <div class="panel p-5 mt-4 overflow-x-auto"><h2 class="text-lg font-extrabold mb-2">Desglose anual</h2>
-   <table class="w-full text-sm"><thead><tr class="text-left"><th></th><th class="text-right" style="color:var(--air)">Airbnb</th><th class="text-right" style="color:var(--trad)">Tradicional</th></tr></thead><tbody>
+   <table class="w-full text-sm"><thead><tr class="text-left"><th></th><th class="text-right" style="color:var(--air-text)">Airbnb</th><th class="text-right" style="color:var(--trad)">Tradicional</th></tr></thead><tbody>
     ${row('Ingresos brutos',eur(a.ing),eur(t.ing))}
     ${row('Comisión de plataforma','−'+eur(a.comision),'—')}
     ${row('Limpieza','−'+eur(a.limpieza),'—')}
@@ -276,31 +286,18 @@ function loadAds(){
   s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+ADS_CLIENT;document.head.appendChild(s);
 }
 function getCk(){try{return localStorage.getItem('ck')}catch(e){return null}}
-function setCk(x){try{localStorage.setItem('ck',x)}catch(e){}$('ck').classList.add('hidden');if(x==='yes')loadAds()}
-function resetCookies(){try{localStorage.removeItem('ck')}catch(e){}$('ck').classList.remove('hidden')}
+// Evita que el banner fijo de cookies tape contenido: reserva en el body el
+// espacio exacto de su altura mientras está visible (sin solape en móvil).
+function syncCkPad(){document.body.style.paddingBottom=$('ck').classList.contains('hidden')?'':$('ck').offsetHeight+'px'}
+function setCk(x){try{localStorage.setItem('ck',x)}catch(e){}$('ck').classList.add('hidden');syncCkPad();if(x==='yes')loadAds()}
+function resetCookies(){try{localStorage.removeItem('ck')}catch(e){}$('ck').classList.remove('hidden');syncCkPad()}
 $('ckYes').onclick=()=>setCk('yes');$('ckNo').onclick=()=>setCk('no');
+window.addEventListener('resize',syncCkPad);
 const c=getCk(); if(!c)$('ck').classList.remove('hidden'); else if(c==='yes')loadAds();
+syncCkPad();
 
 $('yr').textContent=new Date().getFullYear();
 update();
 </script>
 </body>
-  <!-- PIE DE PÁGINA Y ENLACES LEGALES -->
-    <footer class="bg-gray-900 text-gray-400 py-8 mt-12 border-t border-gray-800 text-center text-sm">
-      <div class="max-w-4xl mx-auto px-4">
-        <p class="mb-4">
-          © 2026 CalculadoraRentabilidad.com - Herramienta independiente de cálculo financiero y simulación inmobiliaria.
-        </p>
-        <div class="flex justify-center space-x-6 mb-4">
-          <a href="aviso-legal.html" class="hover:text-white transition">Aviso Legal</a>
-          <a href="privacidad.html" class="hover:text-white transition">Política de Privacidad</a>
-          <a href="cookies.html" class="hover:text-white transition">Política de Cookies</a>
-        </div>
-        <p class="text-xs text-gray-500">
-          *Aviso:* Esta calculadora es una herramienta meramente orientativa e ilustrativa. Los resultados no constituyen asesoramiento financiero, tributario o legal vinculante.
-        </p>
-      </div>
-    </footer>
-
-</html>
 </html>
