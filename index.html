@@ -329,6 +329,57 @@ syncCkPad();
 
 $('yr').textContent=new Date().getFullYear();
 update();
+  // --- EXPORTAR A EXCEL (.CSV) ---
+  document.getElementById('downloadCsvBtn')?.addEventListener('click', function () {
+    const fecha = new Date().toLocaleDateString('es-ES');
+    
+    // Obtener los datos calculados del panel de resultados
+    const resDiv = document.getElementById('res');
+    let textoResumen = "INFORME DE RENTABILIDAD - CalculadoraRentabilidad.com\r\n";
+    textoResumen += `Fecha de generación;${fecha}\r\n\r\n`;
+    textoResumen += "CONCEPTO;VALOR\r\n";
+
+    if (resDiv) {
+      // Recorre los textos visibles del panel de resultados
+      const bloques = resDiv.querySelectorAll('.kpi, .card, div');
+      const datosExtraidos = new Set();
+      
+      resDiv.querySelectorAll('p, span, h3, h4').forEach(el => {
+        const texto = el.innerText.trim();
+        if (texto && (texto.includes('€') || texto.includes('%')) && !datosExtraidos.has(texto)) {
+          datosExtraidos.add(texto);
+          textoResumen += `Dato calculado;${texto.replace(/;/g, ',')}\r\n`;
+        }
+      });
+    }
+
+    // Crear el archivo CSV descargable con codificación compatible con Excel
+    const blob = new Blob(["\uFEFF" + textoResumen], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", `Rentabilidad_Inmueble_${Date.now()}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+
+  // --- EXPORTAR A PDF ---
+  document.getElementById('downloadPdfBtn')?.addEventListener('click', function () {
+    const elemento = document.getElementById('res') || document.querySelector('main');
+    
+    // Configuración del documento PDF
+    const config = {
+      margin: [10, 10, 10, 10],
+      filename: `Informe_Rentabilidad_${Date.now()}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    // Descarga automática
+    html2pdf().set(config).from(elemento).save();
+  });
 </script>
 </body>
 </html>
