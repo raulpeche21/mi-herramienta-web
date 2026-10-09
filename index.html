@@ -329,56 +329,113 @@ syncCkPad();
 
 $('yr').textContent=new Date().getFullYear();
 update();
-  // --- EXPORTAR A EXCEL (.CSV) ---
+ // Helper para leer valores numéricos o textos de los inputs/resultados
+  function obtenerDato(id) {
+    const el = document.getElementById(id);
+    if (!el) return '-';
+    if (el.tagName === 'INPUT' || el.tagName === 'SELECT') {
+      return el.value ? el.value.trim() : '-';
+    }
+    return el.innerText ? el.innerText.trim() : '-';
+  }
+
+  // --- EXPORTAR A EXCEL (.CSV) CON DATOS REALES ---
   document.getElementById('downloadCsvBtn')?.addEventListener('click', function () {
     const fecha = new Date().toLocaleDateString('es-ES');
     
-    // Obtener los datos calculados del panel de resultados
-    const resDiv = document.getElementById('res');
-    let textoResumen = "INFORME DE RENTABILIDAD - CalculadoraRentabilidad.com\r\n";
-    textoResumen += `Fecha de generación;${fecha}\r\n\r\n`;
-    textoResumen += "CONCEPTO;VALOR\r\n";
+    // Captura de datos del formulario y resultados
+    const datos = [
+      ["INFORME DE RENTABILIDAD INMOBILIARIA", "calculadorarentabilidad.com"],
+      ["Fecha de simulación", fecha],
+      ["", ""],
+      ["PARÁMETRO DE LA OPERACIÓN", "VALOR ESTIMADO"],
+      ["Precio de compra", (obtenerDato('price') || obtenerDato('precio') || '-') + " €"],
+      ["Reforma / Puesta a punto", (obtenerDato('reform') || obtenerDato('reforma') || '0') + " €"],
+      ["Impuestos y gastos de compra (ITP/Notaría)", (obtenerDato('expenses') || obtenerDato('gastos') || '-') + " €"],
+      ["Alquiler estimado mensual", (obtenerDato('rent') || obtenerDato('alquiler') || '-') + " €"],
+      ["", ""],
+      ["RESULTADOS DEL ANÁLISIS", "VALOR CALCULADO"],
+      ["Inversión Total Desembolsada", obtenerDato('totalInvestment') || obtenerDato('total') || '-'],
+      ["Rentabilidad Bruta Anual", obtenerDato('grossYield') || obtenerDato('rentBruta') || '-'],
+      ["Rentabilidad Neta Anual", obtenerDato('netYield') || obtenerDato('rentNeta') || '-'],
+      ["Flujo de Caja Neto (Cash Flow)", obtenerDato('cashFlow') || obtenerDato('flujoCaja') || '-']
+    ];
 
-    if (resDiv) {
-      // Recorre los textos visibles del panel de resultados
-      const bloques = resDiv.querySelectorAll('.kpi, .card, div');
-      const datosExtraidos = new Set();
-      
-      resDiv.querySelectorAll('p, span, h3, h4').forEach(el => {
-        const texto = el.innerText.trim();
-        if (texto && (texto.includes('€') || texto.includes('%')) && !datosExtraidos.has(texto)) {
-          datosExtraidos.add(texto);
-          textoResumen += `Dato calculado;${texto.replace(/;/g, ',')}\r\n`;
-        }
-      });
-    }
+    let csvContent = "\uFEFF"; // UTF-8 BOM para que Excel respete acentos y caracteres
+    datos.forEach(row => {
+      csvContent += `${row[0]};${row[1]}\r\n`;
+    });
 
-    // Crear el archivo CSV descargable con codificación compatible con Excel
-    const blob = new Blob(["\uFEFF" + textoResumen], { type: 'text/csv;charset=utf-8;' });
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement("a");
-    const url = URL.createObjectURL(blob);
-    link.setAttribute("href", url);
-    link.setAttribute("download", `Rentabilidad_Inmueble_${Date.now()}.csv`);
+    link.href = URL.createObjectURL(blob);
+    link.download = `Informe_Inversion_${Date.now()}.csv`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   });
 
-  // --- EXPORTAR A PDF ---
+  // --- EXPORTAR A PDF (INFORME MAQUETADO SIN PÁGINAS EN BLANCO) ---
   document.getElementById('downloadPdfBtn')?.addEventListener('click', function () {
-    const elemento = document.getElementById('res') || document.querySelector('main');
-    
-    // Configuración del documento PDF
+    const fecha = new Date().toLocaleDateString('es-ES');
+
+    // Creamos una plantilla HTML limpia e independiente para evitar que falle el renderizado
+    const plantilla = document.createElement('div');
+    plantilla.style.padding = '30px';
+    plantilla.style.fontFamily = 'Arial, sans-serif';
+    plantilla.style.color = '#0f172a';
+    plantilla.style.backgroundColor = '#ffffff';
+
+    plantilla.innerHTML = `
+      <div style="border-bottom: 2px solid #10b981; padding-bottom: 12px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h1 style="font-size: 20px; font-weight: 800; margin: 0; color: #0f172a;">Calculadora<span style="color:#059669;">Rentabilidad</span>.com</h1>
+          <p style="font-size: 11px; color: #64748b; margin: 4px 0 0 0;">Informe Ejecutivo de Viabilidad Inmobiliaria</p>
+        </div>
+        <div style="text-align: right; font-size: 11px; color: #64748b;">
+          <strong>Fecha:</strong> ${fecha}
+        </div>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <h3 style="font-size: 13px; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">1. Datos de la Adquisición</h3>
+        <table style="width: 100%; font-size: 12px; border-collapse: collapse; margin-top: 8px;">
+          <tr>
+            <td style="padding: 6px 0; color: #64748b;">Precio de compra:</td>
+            <td style="padding: 6px 0; font-weight: bold; text-align: right;">${obtenerDato('price') || obtenerDato('precio')} €</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0; color: #64748b;">Reforma estimada:</td>
+            <td style="padding: 6px 0; font-weight: bold; text-align: right;">${obtenerDato('reform') || obtenerDato('reforma') || '0'} €</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0; color: #64748b;">Ingreso mensual proyectado:</td>
+            <td style="padding: 6px 0; font-weight: bold; text-align: right;">${obtenerDato('rent') || obtenerDato('alquiler')} €/mes</td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+        <h3 style="font-size: 13px; text-transform: uppercase; color: #059669; letter-spacing: 0.5px; margin: 0 0 10px 0;">2. Resumen Financiero y Rentabilidades</h3>
+        <div style="font-size: 12px; line-height: 1.8;">
+          ${document.getElementById('res')?.innerText.replace(/\n\s*\n/g, '\n').replace(/\n/g, '<br>') || 'Simulación completada con éxito.'}
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid #e2e8f0; padding-top: 12px; font-size: 10px; color: #94a3b8; text-align: center;">
+        Documento generado automáticamente por CalculadoraRentabilidad.com. Este cálculo es orientativo y no constituye asesoramiento financiero vinculante.
+      </div>
+    `;
+
     const config = {
       margin: [10, 10, 10, 10],
-      filename: `Informe_Rentabilidad_${Date.now()}.pdf`,
+      filename: `Informe_Viabilidad_${Date.now()}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
 
-    // Descarga automática
-    html2pdf().set(config).from(elemento).save();
+    html2pdf().set(config).from(plantilla).save();
   });
 </script>
 </body>
