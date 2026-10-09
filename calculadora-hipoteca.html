@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculadora de Hipoteca y Viabilidad Bancaria | CalculadoraRentabilidad.com</title>
-  <meta name="description" content="Calcula tu cuota mensual de hipoteca, intereses totales, gastos de compraventa y ratio de endeudamiento bancario según tus ingresos.">
+  <meta name="description" content="Calcula la cuota mensual de tu hipoteca, cuadro de amortización, gastos de escrituración y ratio de endeudamiento bancario según las directrices del Banco de España.">
   <link rel="canonical" href="https://calculadorarentabilidad.com/calculadora-hipoteca.html">
   
   <!-- FAVICON OFICIAL -->
@@ -51,7 +51,7 @@
 
 <main class="max-w-6xl mx-auto px-4 py-8">
   <h1 class="text-3xl md:text-5xl font-extrabold max-w-3xl leading-tight">Calculadora de Hipoteca y Viabilidad Bancaria</h1>
-  <p class="mt-2 text-slate-700 text-base md:text-lg max-w-2xl">Calcula tu cuota mensual exacta, los impuestos de compraventa y comprueba si el banco te aprobará el préstamo según tu ratio de endeudamiento.</p>
+  <p class="mt-2 text-slate-700 text-base md:text-lg max-w-2xl">Calcula la cuota mensual exacta de tu préstamo, los gastos reales de escrituración e impuestos en España y comprueba si el banco aprobará tu perfil de riesgo.</p>
 
   <div class="grid lg:grid-cols-5 gap-6 mt-8">
     <!-- FORMULARIO -->
@@ -60,7 +60,7 @@
 
       <div class="mb-4">
         <div class="flex justify-between text-sm font-semibold mb-1">
-          <label for="precio">Precio de compra</label>
+          <label for="precio">Precio de compraventa</label>
           <span id="precio_val" class="text-emerald-700 font-bold">180.000 €</span>
         </div>
         <input type="range" id="precio" min="40000" max="800000" step="5000" value="180000" class="w-full">
@@ -96,7 +96,7 @@
           <span id="ingresos_val" class="text-emerald-700 font-bold">2.400 €</span>
         </div>
         <input type="range" id="ingresos" min="1000" max="8000" step="50" value="2400" class="w-full">
-        <p class="text-xs text-slate-500 mt-1">Suma de ingresos de los titulares.</p>
+        <p class="text-xs text-slate-500 mt-1">Suma de las nóminas o rendimientos limpios de los titulares.</p>
       </div>
     </section>
 
@@ -143,118 +143,43 @@
       </div>
     </section>
   </div>
-</main>
 
-<footer class="border-t py-8 mt-12 text-sm text-slate-600" style="border-color:var(--line)">
-  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-3 justify-between">
-    <p>© CalculadoraRentabilidad.com — Simulación orientativa bajo sistema de amortización francés.</p>
-    <nav class="flex flex-wrap gap-4">
-      <a class="underline" href="/aviso-legal.html">Aviso Legal</a>
-      <a class="underline" href="/privacidad.html">Privacidad</a>
-      <a class="underline" href="/cookies.html">Cookies</a>
-    </nav>
-  </div>
-</footer>
+  <!-- SECCIÓN EDUCATIVA Y DE CONTENIDO (FUNDAMENTAL PARA ADSENSE) -->
+  <section class="mt-12 space-y-8 border-t pt-10" style="border-color:var(--line)">
+    <div>
+      <h2 class="text-2xl font-extrabold">Factores clave para la aprobación de una hipoteca en España</h2>
+      <p class="text-slate-600 mt-2 leading-relaxed">
+        Las entidades financieras reguladas por el Banco de España aplican criterios estrictos de solvencia y análisis de riesgo (scoring bancario) antes de emitir una oferta vinculante (FEIN). Comprender cómo evalúan tu perfil incrementa exponencialmente las opciones de negociación de tipos de interés competitivos.
+      </p>
+    </div>
 
-<script>
-const $=id=>document.getElementById(id);
-const eur=n=>new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="panel p-4">
+        <h3 class="font-extrabold text-slate-900">Límite del 35% de esfuerzo</h3>
+        <p class="text-sm mt-1 text-slate-600">La cuota mensual de todos tus préstamos vigentes (hipoteca, coche o personales) no debe superar nunca el 35% de tus ingresos netos regulares.</p>
+      </div>
+      <div class="panel p-4">
+        <h3 class="font-extrabold text-slate-900">Porcentaje de financiación (LTV)</h3>
+        <p class="text-sm mt-1 text-slate-600">Para primera residencia los bancos financian habitualmente hasta el 80% del valor de tasación o compraventa. Para segundas residencias el tope suele ser del 70%.</p>
+      </div>
+      <div class="panel p-4">
+        <h3 class="font-extrabold text-slate-900">Gastos de escrituración (~10%)</h3>
+        <p class="text-sm mt-1 text-slate-600">Comprar una vivienda exige aportar de tu bolsillo el 20% de entrada más un 10% adicional para impuestos (ITP o IVA), notaría, gestoría y tasación oficial.</p>
+      </div>
+      <div class="panel p-4">
+        <h3 class="font-extrabold text-slate-900">Estabilidad laboral y antigüedad</h3>
+        <p class="text-sm mt-1 text-slate-600">Contratos indefinidos con periodo de prueba superado o antigüedad laboral superior a dos años como autónomo son requisitos habituales en los comités de riesgo.</p>
+      </div>
+    </div>
 
-function calcular(){
-  const precio = parseFloat($('precio').value);
-  const ahorros = parseFloat($('ahorros').value);
-  const plazoAnios = parseInt($('plazo').value);
-  const tin = parseFloat($('interes').value);
-  const ingresos = parseFloat($('ingresos').value);
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-extrabold mb-4">Preguntas frecuentes sobre préstamos hipotecarios</h2>
+      <div class="space-y-3">
+        <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Cómo calcula esta herramienta la cuota mensual?</summary>
+          <p class="mt-2 text-slate-700 text-sm leading-relaxed">Utilizamos el <strong>sistema de amortización francés</strong>, el estándar utilizado en el mercado bancario español. Este sistema mantiene cuotas constantes donde al principio del plazo la mayor parte del recibo corresponde a intereses y, conforme avanza el tiempo, se incrementa la proporción de capital devuelto.</p></details>
 
-  $('precio_val').textContent = eur(precio);
-  const pctEntrada = ((ahorros / precio) * 100).toFixed(0);
-  $('ahorros_val').textContent = `${eur(ahorros)} (${pctEntrada}%)`;
-  $('plazo_val').textContent = `${plazoAnios} años`;
-  $('interes_val').textContent = `${tin.toFixed(2).replace('.', ',')} %`;
-  $('ingresos_val').textContent = eur(ingresos);
+        <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Qué impuestos se pagan al comprar vivienda?</summary>
+          <p class="mt-2 text-slate-700 text-sm leading-relaxed">Si la vivienda es de <strong>segunda mano</strong> se abona el Impuesto de Transmisiones Patrimoniales (ITP), que oscila entre el 6% y el 10% según la Comunidad Autónoma. Si la vivienda es de <strong>obra nueva</strong>, se paga el 10% de IVA más el Impuesto de Actos Jurídicos Documentados (AJD).</p></details>
 
-  const capital = Math.max(0, precio - ahorros);
-  const meses = plazoAnios * 12;
-  const r = (tin / 100) / 12;
-
-  let cuota = 0;
-  if(capital > 0){
-    cuota = (capital * r) / (1 - Math.pow(1 + r, -meses));
-  }
-
-  const totalPagado = cuota * meses;
-  const interesesTotales = Math.max(0, totalPagado - capital);
-  const gastosCompra = precio * 0.10;
-  const colchonNecesario = ahorros + gastosCompra;
-  const ratio = ingresos > 0 ? (cuota / ingresos) * 100 : 0;
-
-  $('cuota_res').textContent = eur(cuota) + '/mes';$('total_prestamo_res').textContent = `Importe financiado: ${eur(capital)} (${(100 - pctEntrada)}% del valor)`;
-  $('ratio_res').textContent = ratio.toFixed(1).replace('.', ',') + ' %';
-  $('gastos_compra_res').textContent = eur(gastosCompra);$('ahorro_total_necesario').textContent = eur(colchonNecesario);
-  $('intereses_totales_res').textContent = eur(interesesTotales);$('coste_total_inmueble').textContent = eur(precio + interesesTotales);
-
-  const panelV = $('panel_veredicto');
-  const titV = $('veredicto_titulo');
-  const descV = $('veredicto_desc');
-  const statB = $('banco_status');
-
-  if(ratio <= 30){
-    panelV.className = 'panel p-5 border-l-4 border-emerald-500 bg-emerald-50/50';
-    titV.className = 'font-extrabold text-base text-emerald-900';
-    titV.textContent = '✅ Operación Viable (Riesgo Bajo)';
-    statB.className = 'text-xs font-bold mt-1 text-emerald-600';
-    statB.textContent = 'Favorable: menor al 30%';
-    descV.textContent = `Tu cuota representa el ${ratio.toFixed(1)}% de tus ingresos netos. Los bancos financian esta operación sin problemas al situarse ampliamente por debajo del umbral recomendado del 35%.`;
-  } else if(ratio <= 35){
-    panelV.className = 'panel p-5 border-l-4 border-amber-500 bg-amber-50/50';
-    titV.className = 'font-extrabold text-base text-amber-900';
-    titV.textContent = '⚠️ Operación Ajustada (Límite Aceptable)';
-    statB.className = 'text-xs font-bold mt-1 text-amber-600';
-    statB.textContent = 'En el límite: 30% - 35%';
-    descV.textContent = `La cuota absorbe el ${ratio.toFixed(1)}% del sueldo. El Banco de España fija el 35% como techo máximo prudencial. Te exigirán estabilidad laboral demostrable.`;
-  } else {
-    panelV.className = 'panel p-5 border-l-4 border-rose-500 bg-rose-50/50';
-    titV.className = 'font-extrabold text-base text-rose-900';
-    titV.textContent = '❌ Riesgo Alto de Denegación';
-    statB.className = 'text-xs font-bold mt-1 text-rose-600';
-    statB.textContent = 'Crítico: supera el 35%';
-    descV.textContent = `El ${ratio.toFixed(1)}% de tus ingresos para la hipoteca sobrepasa los criterios de riesgo estándar. Te denegarán el préstamo salvo que aportes más entrada o amplíes el plazo.`;
-  }
-}
-
-['precio','ahorros','plazo','interes','ingresos'].forEach(id=>{
-  $(id).addEventListener('input', calcular);
-});
-calcular();
-
-// EXPORTAR A EXCEL (.CSV)
-document.getElementById('downloadCsvBtn')?.addEventListener('click', function () {
-  const precio = $('precio').value;
-  const ahorros = $('ahorros').value;
-  const cuota = $('cuota_res').textContent;
-  const ratio = $('ratio_res').textContent;
-  const fecha = new Date().toLocaleDateString('es-ES');
-
-  let csv = "\uFEFF";
-  csv += "ESTUDIO DE HIPOTECA - CalculadoraRentabilidad.com\r\n";
-  csv += `Fecha;${fecha}\r\n\r\n`;
-  csv += "CONCEPTO;VALOR\r\n";
-  csv += `Precio de compra;${precio} €\r\n`;
-  csv += `Entrada aportada;${ahorros} €\r\n`;
-  csv += `Plazo;${$('plazo').value} años\r\n`;
-  csv += `Tipo de interés;${$('interes').value} %\r\n`;
-  csv += `Cuota mensual calculada;${cuota}\r\n`;
-  csv += `Ratio de endeudamiento;${ratio}\r\n`;
-
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = `Estudio_Hipoteca_${Date.now()}.csv`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-});
-</script>
-</body>
-</html>
+        <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Qué gastos de la hipoteca asume el banco?</summary>
+          <p class="
