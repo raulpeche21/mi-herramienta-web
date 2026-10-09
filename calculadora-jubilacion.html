@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculadora de Ahorro para la Jubilación e Interés Compuesto | CalculadoraRentabilidad.com</title>
-  <meta name="description" content="Calcula cuánto dinero acumularás para tu jubilación gracias al interés compuesto invirtiendo mes a mes.">
+  <meta name="description" content="Calcula cuánto dinero acumularás para tu jubilación gracias al interés compuesto invirtiendo periódicamente en fondos indexados o planes de pensiones.">
   <link rel="canonical" href="https://calculadorarentabilidad.com/calculadora-jubilacion.html">
   
   <!-- FAVICON OFICIAL -->
@@ -51,7 +51,7 @@
 
 <main class="max-w-6xl mx-auto px-4 py-8">
   <h1 class="text-3xl md:text-5xl font-extrabold max-w-3xl leading-tight">Calculadora de Ahorro e Interés Compuesto</h1>
-  <p class="mt-2 text-slate-700 text-base md:text-lg max-w-2xl">Descubre cuánto capital tendrás al jubilarte invirtiendo periódicamente en fondos indexados o planes de pensiones.</p>
+  <p class="mt-2 text-slate-700 text-base md:text-lg max-w-2xl">Descubre cuánto capital tendrás al jubilarte invirtiendo periódicamente en fondos indexados globales, carteras diversificadas o planes de ahorro sistemático.</p>
 
   <div class="grid lg:grid-cols-5 gap-6 mt-8">
     <!-- FORMULARIO -->
@@ -96,7 +96,7 @@
           <span id="rent_anual_val" class="text-emerald-700 font-bold">7,00 %</span>
         </div>
         <input type="range" id="rent_anual" min="1.0" max="12.0" step="0.5" value="7.0" class="w-full">
-        <p class="text-xs text-slate-500 mt-1">El MSCI World / S&P500 promedian históricamente un 7%-9% anual.</p>
+        <p class="text-xs text-slate-500 mt-1">El MSCI World / S&P500 promedian históricamente un 7%-9% anual a largo plazo.</p>
       </div>
     </section>
 
@@ -112,13 +112,13 @@
         <div class="panel p-5 bg-slate-50">
           <span class="text-xs font-bold uppercase text-slate-500">Dinero aportado de tu bolsillo</span>
           <div id="aportado_res" class="text-2xl font-extrabold text-slate-900 mt-1">-- €</div>
-          <p class="text-xs text-slate-500 mt-1">Tu esfuerzo de ahorro acumulado.</p>
+          <p class="text-xs text-slate-500 mt-1">Tu esfuerzo de ahorro neto acumulado.</p>
         </div>
 
         <div class="panel p-5 bg-emerald-50/60 border border-emerald-200">
           <span class="text-xs font-bold uppercase text-emerald-800">Intereses y beneficios generados</span>
           <div id="intereses_res" class="text-2xl font-extrabold text-emerald-800 mt-1">-- €</div>
-          <p class="text-xs text-emerald-700 mt-1">Generado por el interés compuesto.</p>
+          <p class="text-xs text-emerald-700 mt-1">Rendimiento generado por el interés compuesto.</p>
         </div>
       </div>
 
@@ -132,6 +132,49 @@
       </div>
     </section>
   </div>
+
+  <!-- SECCIÓN EDUCATIVA Y DE CONTENIDO (FUNDAMENTAL PARA ADSENSE) -->
+  <section class="mt-12 space-y-8 border-t pt-10" style="border-color:var(--line)">
+    <div>
+      <h2 class="text-2xl font-extrabold">Estrategias de inversión a largo plazo para la jubilación</h2>
+      <p class="text-slate-600 mt-2 leading-relaxed">
+        El sistema público de pensiones afronta desafíos demográficos estructurales en Europa. Planificar una cartera de inversión periódica mediante aportaciones mensuales automáticas permite batir la inflación y beneficiarse del crecimiento económico global.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="panel p-4">
+        <h3 class="font-extrabold text-slate-900">Efecto bola de nieve</h3>
+        <p class="text-sm mt-1 text-slate-600">El interés compuesto reinvierte las plusvalías y dividendos generados, haciendo que el patrimonio crezca de forma exponencial con el paso de las décadas.</p>
+      </div>
+      <div class="panel p-4">
+        <h3 class="font-extrabold text-slate-900">Aportaciones sistemáticas (DCA)</h3>
+        <p class="text-sm mt-1 text-slate-600">Invertir una cantidad fija cada mes (Dollar Cost Averaging) reduce el riesgo de mercado, promediando el precio de compra en épocas alcistas y bajistas.</p>
+      </div>
+      <div class="panel p-4">
+        <h3 class="font-extrabold text-slate-900">Fondos indexados y ETFs</h3>
+        <p class="text-sm mt-1 text-slate-600">Vehículos de inversión colectiva pasivos que replican índices globales (MSCI World, S&P 500) con comisiones anuales mínimas (por debajo del 0,25%).</p>
+      </div>
+      <div class="panel p-4">
+        <h3 class="font-extrabold text-slate-900">La Regla del 4% (Trinidad Study)</h3>
+        <p class="text-sm mt-1 text-slate-600">Tasa de retirada anual segura histórica que permite vivir del capital acumulado durante la jubilación sin agotar el patrimonio principal.</p>
+      </div>
+    </div>
+
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-extrabold mb-4">Preguntas frecuentes sobre ahorro e interés compuesto</h2>
+      <div class="space-y-3">
+        <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Por qué empezar a ahorrar a los 20 o 30 años marca una diferencia tan grande?</summary>
+          <p class="mt-2 text-slate-700 text-sm leading-relaxed">En el cálculo del interés compuesto, la variable con mayor peso es el <strong>tiempo</strong>. Una persona que invierte 150 € al mes entre los 25 y los 65 años acumulará un patrimonio notablemente superior al de alguien que aporte el doble (300 € al mes) empezando a los 45 años, debido a dos décadas adicionales de capitalización de intereses.</p></details>
+
+        <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Es realista esperar una rentabilidad del 7% anual?</summary>
+          <p class="mt-2 text-slate-700 text-sm leading-relaxed">Históricamente, los índices bursátiles mundiales diversificados (como el S&P 500 o el MSCI World) han ofrecido rentabilidades reales anualizadas entre el 7% y el 9% en periodos superiores a 20 años. Aunque rendimientos pasados no garantizan resultados futuros, representan el parámetro de referencia más utilizado en planificación financiera.</p></details>
+
+        <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Qué tratamiento fiscal tienen los fondos indexados en España?</summary>
+          <p class="mt-2 text-slate-700 text-sm leading-relaxed">En España, los fondos de inversión se benefician del régimen de traspasos: se puede mover el capital de un fondo a otro sin tributar por las ganancias hasta el momento del rescate definitivo, difiriendo el pago del IRPF durante toda la fase de acumulación.</p></details>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="border-t py-8 mt-12 text-sm text-slate-600" style="border-color:var(--line)">
@@ -177,7 +220,7 @@ function calcular(){
 
   const aportado = ini + (mes * mesesTot);
   const intereses = Math.max(0, total - aportado);
-  const rentaMensual = (total * 0.04) / 12; // Regla del 4% anual dividida en 12 meses
+  const rentaMensual = (total * 0.04) / 12;
 
   $('patrimonio_res').textContent = eur(total);$('renta_mensual_res').textContent = `Renta mensual equivalente (Regla del 4%): ${eur(rentaMensual)}/mes`;
   $('aportado_res').textContent = eur(aportado);$('intereses_res').textContent = `+${eur(intereses)}`;
