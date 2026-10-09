@@ -1,340 +1,218 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2762238393110593"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2762238393110593" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculadora de Ahorro para la Jubilación e Interés Compuesto | CalculadoraRentabilidad.com</title>
-  <meta name="description" content="Calcula cuánto dinero acumularás para tu jubilación gracias al interés compuesto. Simula aportaciones mensuales, rentabilidad anual esperada e inflación en España.">
+  <meta name="description" content="Calcula cuánto dinero acumularás para tu jubilación gracias al interés compuesto invirtiendo mes a mes.">
   <link rel="canonical" href="https://calculadorarentabilidad.com/calculadora-jubilacion.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FAVICON OFICIAL -->
+  <link rel="icon" type="image/png" href="/logo-perfil.png?v=3">
+  <link rel="shortcut icon" type="image/png" href="/logo-perfil.png?v=3">
+  <link rel="apple-touch-icon" href="/logo-perfil.png?v=3">
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: '#f0fdf4',
-              500: '#22c55e',
-              600: '#16a34a',
-              700: '#15803d',
-              900: '#14532d'
-            }
-          }
-        }
-      }
-    }
-  </script>
   <style>
-    .panel {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 1rem;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-    }
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
+    :root{--paper:#F6F7F4;--ink:#10302C;--line:#DADFD8}
+    body{background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,sans-serif}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:12px}
+    input[type=range]{accent-color:#059669}
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between">
+<body>
 
-  <!-- CABECERA -->
-  <header class="border-b bg-white sticky top-0 z-30 shadow-sm border-slate-200">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="/" class="font-extrabold text-lg flex items-center gap-2 text-slate-900 tracking-tight">
-      <span>🏠</span>
+<!-- CABECERA -->
+<header class="border-b bg-white sticky top-0 z-30 shadow-sm" style="border-color:var(--line)">
+  <div class="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between">
+    <a href="/" class="font-extrabold text-lg flex items-center gap-2.5" style="color:var(--ink);text-decoration:none">
+      <img src="/logo-perfil.png?v=3" alt="Logo" class="w-8 h-8 rounded-lg object-contain">
       <span>Calculadora<span class="text-emerald-600">Rentabilidad</span>.com</span>
     </a>
-    <a href="/" class="text-xs font-semibold text-slate-500 hover:text-slate-800 underline underline-offset-4">Volver al inicio</a>
+    <a href="/" class="text-xs font-semibold text-slate-500 hover:text-slate-800 underline underline-offset-4">Inicio</a>
   </div>
 </header>
 
-<!-- SELECTOR CENTRAL GRANDE (3 CALCULADORAS - JUBILACIÓN ACTIVA) -->
+<!-- NAVEGACIÓN 3 HERRAMIENTAS (JUBILACIÓN ACTIVA) -->
 <section class="max-w-3xl mx-auto px-4 pt-6 pb-2" aria-label="Elegir calculadora">
   <div class="bg-slate-200/80 p-1.5 rounded-2xl flex flex-wrap sm:flex-nowrap items-center justify-center gap-2 shadow-inner border border-slate-300">
-    <!-- Botón Inmobiliaria -->
     <a href="/" class="flex-1 min-w-[140px] flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-bold text-sm text-slate-700 hover:bg-white/70 text-center transition">
       <span>🏠</span><span>Inmobiliaria</span>
     </a>
-    <!-- Botón Hipoteca -->
     <a href="/calculadora-hipoteca.html" class="flex-1 min-w-[140px] flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-bold text-sm text-slate-700 hover:bg-white/70 text-center transition">
       <span>🏦</span><span>Hipoteca y Banco</span>
     </a>
-    <!-- Botón Jubilación Activo -->
     <a href="/calculadora-jubilacion.html" class="flex-1 min-w-[140px] flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-extrabold text-sm bg-emerald-600 text-white shadow-md text-center transition">
       <span>📈</span><span>Jubilación</span>
     </a>
   </div>
 </section>
-    <!-- Botón Jubilación Activo -->
-    <a href="/calculadora-jubilacion.html" class="flex-1 flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl font-extrabold text-base sm:text-lg bg-emerald-600 text-white shadow-md text-center transition-all">
-      <span class="text-xl">📈</span>
-      <span>Ahorro Jubilación</span>
-    </a>
+
+<main class="max-w-6xl mx-auto px-4 py-8">
+  <h1 class="text-3xl md:text-5xl font-extrabold max-w-3xl leading-tight">Calculadora de Ahorro e Interés Compuesto</h1>
+  <p class="mt-2 text-slate-700 text-base md:text-lg max-w-2xl">Descubre cuánto capital tendrás al jubilarte invirtiendo periódicamente en fondos indexados o planes de pensiones.</p>
+
+  <div class="grid lg:grid-cols-5 gap-6 mt-8">
+    <!-- FORMULARIO -->
+    <section class="lg:col-span-2 panel p-5">
+      <h2 class="text-base font-extrabold mb-4 text-slate-900 border-b pb-2">Tu Plan de Ahorro</h2>
+
+      <div class="mb-4">
+        <div class="flex justify-between text-sm font-semibold mb-1">
+          <label for="edad_act">Edad actual</label>
+          <span id="edad_act_val" class="text-emerald-700 font-bold">25 años</span>
+        </div>
+        <input type="range" id="edad_act" min="18" max="65" step="1" value="25" class="w-full">
+      </div>
+
+      <div class="mb-4">
+        <div class="flex justify-between text-sm font-semibold mb-1">
+          <label for="edad_jub">Edad de jubilación prevista</label>
+          <span id="edad_jub_val" class="text-emerald-700 font-bold">67 años</span>
+        </div>
+        <input type="range" id="edad_jub" min="40" max="75" step="1" value="67" class="w-full">
+      </div>
+
+      <div class="mb-4">
+        <div class="flex justify-between text-sm font-semibold mb-1">
+          <label for="capital_ini">Ahorro inicial disponible</label>
+          <span id="capital_ini_val" class="text-emerald-700 font-bold">5.000 €</span>
+        </div>
+        <input type="range" id="capital_ini" min="0" max="100000" step="1000" value="5000" class="w-full">
+      </div>
+
+      <div class="mb-4">
+        <div class="flex justify-between text-sm font-semibold mb-1">
+          <label for="ahorro_mes">Aportación mensual recurrente</label>
+          <span id="ahorro_mes_val" class="text-emerald-700 font-bold">250 €/mes</span>
+        </div>
+        <input type="range" id="ahorro_mes" min="20" max="2000" step="20" value="250" class="w-full">
+      </div>
+
+      <div class="mb-2">
+        <div class="flex justify-between text-sm font-semibold mb-1">
+          <label for="rent_anual">Rentabilidad anual estimada</label>
+          <span id="rent_anual_val" class="text-emerald-700 font-bold">7,00 %</span>
+        </div>
+        <input type="range" id="rent_anual" min="1.0" max="12.0" step="0.5" value="7.0" class="w-full">
+        <p class="text-xs text-slate-500 mt-1">El MSCI World / S&P500 promedian históricamente un 7%-9% anual.</p>
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="lg:col-span-3 space-y-4">
+      <div class="panel p-6 border-t-4 border-emerald-600 bg-white shadow-sm">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Patrimonio total estimado a los <span id="edad_jub_kpi">67</span> años</span>
+        <div id="patrimonio_res" class="text-4xl sm:text-5xl font-extrabold text-emerald-700 mt-2">-- €</div>
+        <p id="renta_mensual_res" class="text-sm font-bold text-slate-700 mt-2">Renta vitalicia segura (Regla del 4%): -- €/mes</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="panel p-5 bg-slate-50">
+          <span class="text-xs font-bold uppercase text-slate-500">Dinero aportado de tu bolsillo</span>
+          <div id="aportado_res" class="text-2xl font-extrabold text-slate-900 mt-1">-- €</div>
+          <p class="text-xs text-slate-500 mt-1">Tu esfuerzo de ahorro acumulado.</p>
+        </div>
+
+        <div class="panel p-5 bg-emerald-50/60 border border-emerald-200">
+          <span class="text-xs font-bold uppercase text-emerald-800">Intereses y beneficios generados</span>
+          <div id="intereses_res" class="text-2xl font-extrabold text-emerald-800 mt-1">-- €</div>
+          <p class="text-xs text-emerald-700 mt-1">Generado por el interés compuesto.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-4">
+        <button onclick="window.print()" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-2.5 px-5 rounded-xl shadow-sm transition cursor-pointer">
+          <span>📄</span><span>Guardar Plan en PDF</span>
+        </button>
+        <button id="downloadCsvBtn" class="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm py-2.5 px-5 rounded-xl shadow-sm transition cursor-pointer">
+          <span>📊</span><span>Exportar a Excel (.CSV)</span>
+        </button>
+      </div>
+    </section>
   </div>
-</section>
+</main>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 flex-grow w-full">
-    
-    <!-- TÍTULO Y DESCRIPCIÓN -->
-    <div class="text-center max-w-2xl mx-auto mb-8">
-      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-        Calculadora de Jubilación e Interés Compuesto
-      </h1>
-      <p class="mt-3 text-base sm:text-lg text-slate-600">
-        Simula el patrimonio acumulado al retirarte según tu ahorro periódico y el rendimiento anual del mercado.
-      </p>
-    </div>
+<footer class="border-t py-8 mt-12 text-sm text-slate-600" style="border-color:var(--line)">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-3 justify-between">
+    <p>© CalculadoraRentabilidad.com — Simulación financiera orientativa sobre proyecciones estadísticas.</p>
+    <nav class="flex flex-wrap gap-4">
+      <a class="underline" href="/aviso-legal.html">Aviso Legal</a>
+      <a class="underline" href="/privacidad.html">Privacidad</a>
+      <a class="underline" href="/cookies.html">Cookies</a>
+    </nav>
+  </div>
+</footer>
 
-    <!-- CALCULADORA (GRID 2 COLUMNAS) -->
-    <div class="grid lg:grid-cols-12 gap-8 items-start">
-      
-      <!-- FORMULARIO DE ENTRADA (COLUMNA IZQUIERDA) -->
-      <section class="lg:col-span-6 panel p-6 sm:p-7 space-y-5" aria-label="Parámetros de ahorro">
-        <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
-          <span>⚙️</span> Tus Parámetros de Ahorro
-        </h2>
+<script>
+const $=id=>document.getElementById(id);
+const eur=n=>new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
 
-        <div>
-          <label for="edadActual" class="block text-sm font-semibold text-slate-700 mb-1">Edad actual</label>
-          <div class="relative">
-            <input type="number" id="edadActual" value="30" min="16" max="90" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-900 font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-            <span class="absolute right-3.5 top-2.5 text-slate-400 text-sm font-medium">años</span>
-          </div>
-        </div>
+function calcular(){
+  let act = parseInt($('edad_act').value);
+  let jub = parseInt($('edad_jub').value);
+  if(jub <= act){ jub = act + 1; $('edad_jub').value = jub; }
 
-        <div>
-          <label for="edadJubilacion" class="block text-sm font-semibold text-slate-700 mb-1">Edad de jubilación prevista</label>
-          <div class="relative">
-            <input type="number" id="edadJubilacion" value="67" min="20" max="100" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-900 font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-            <span class="absolute right-3.5 top-2.5 text-slate-400 text-sm font-medium">años</span>
-          </div>
-        </div>
+  const ini = parseFloat($('capital_ini').value);
+  const mes = parseFloat($('ahorro_mes').value);
+  const rent = parseFloat($('rent_anual').value) / 100;
 
-        <div>
-          <label for="capitalInicial" class="block text-sm font-semibold text-slate-700 mb-1">Ahorro inicial disponible</label>
-          <div class="relative">
-            <input type="number" id="capitalInicial" value="5000" min="0" step="500" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-900 font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-            <span class="absolute right-3.5 top-2.5 text-slate-400 text-sm font-medium">€</span>
-          </div>
-        </div>
+  $('edad_act_val').textContent = `${act} años`;
+  $('edad_jub_val').textContent = `${jub} años`;
+  $('edad_jub_kpi').textContent = jub;
+  $('capital_ini_val').textContent = eur(ini);$('ahorro_mes_val').textContent = `${eur(mes)}/mes`;
+  $('rent_anual_val').textContent = `${(rent*100).toFixed(2).replace('.',',')} %`;
 
-        <div>
-          <label for="aportacionMensual" class="block text-sm font-semibold text-slate-700 mb-1">Aportación periódica al mes</label>
-          <div class="relative">
-            <input type="number" id="aportacionMensual" value="250" min="0" step="25" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-900 font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-            <span class="absolute right-3.5 top-2.5 text-slate-400 text-sm font-medium">€ / mes</span>
-          </div>
-        </div>
+  const anios = jub - act;
+  const mesesTot = anios * 12;
+  const rMes = Math.pow(1 + rent, 1/12) - 1;
 
-        <div>
-          <label for="interesAnual" class="block text-sm font-semibold text-slate-700 mb-1">Rentabilidad media anual estimada</label>
-          <div class="relative">
-            <input type="number" id="interesAnual" value="7.0" min="0" max="30" step="0.1" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-900 font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-            <span class="absolute right-3.5 top-2.5 text-slate-400 text-sm font-medium">%</span>
-          </div>
-          <p class="text-xs text-slate-500 mt-1">Histórico medio de fondos indexados globales (MSCI World / S&P 500): 7% - 8% nominal.</p>
-        </div>
-      </section>
+  let total = ini * Math.pow(1 + rMes, mesesTot);
+  if(rMes > 0){
+    total += mes * ((Math.pow(1 + rMes, mesesTot) - 1) / rMes);
+  } else {
+    total += mes * mesesTot;
+  }
 
-      <!-- RESULTADOS (COLUMNA DERECHA) -->
-      <section class="lg:col-span-6 space-y-6" aria-label="Resultados del cálculo">
-        
-        <div class="panel p-6 sm:p-7 border-emerald-200 bg-white">
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">
-            Proyección a los <span id="resAniosJubilacion">67</span> años
-          </span>
+  const aportado = ini + (mes * mesesTot);
+  const intereses = Math.max(0, total - aportado);
+  const rentaMensual = (total * 0.04) / 12; // Regla del 4% anual dividida en 12 meses
 
-          <div class="mt-4">
-            <p class="text-sm font-medium text-slate-500">Patrimonio final estimado</p>
-            <p class="text-4xl sm:text-5xl font-extrabold text-emerald-600 mt-1 tracking-tight" id="resTotalAcumulado">0 €</p>
-            <p class="text-xs text-slate-500 mt-1">Plazo de inversión analizado: <strong id="resPlazoAnios" class="text-slate-700">37</strong> años.</p>
-          </div>
+  $('patrimonio_res').textContent = eur(total);$('renta_mensual_res').textContent = `Renta mensual equivalente (Regla del 4%): ${eur(rentaMensual)}/mes`;
+  $('aportado_res').textContent = eur(aportado);$('intereses_res').textContent = `+${eur(intereses)}`;
+}
 
-          <!-- DESGLOSE COMPARATIVO -->
-          <div class="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-slate-100">
-            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60">
-              <span class="text-xs font-bold text-slate-500 block uppercase">Total aportado</span>
-              <span class="text-lg sm:text-xl font-bold text-slate-800 mt-1 block" id="resTotalAportado">0 €</span>
-              <span class="text-xs text-slate-500 mt-0.5 block" id="resPorcentajeAportado">(0%)</span>
-            </div>
-            <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
-              <span class="text-xs font-bold text-emerald-800 block uppercase">Interés generado</span>
-              <span class="text-lg sm:text-xl font-bold text-emerald-700 mt-1 block" id="resTotalIntereses">0 €</span>
-              <span class="text-xs text-emerald-700 font-medium mt-0.5 block" id="resPorcentajeIntereses">(0%)</span>
-            </div>
-          </div>
+['edad_act','edad_jub','capital_ini','ahorro_mes','rent_anual'].forEach(id=>{
+  $(id).addEventListener('input', calcular);
+});
+calcular();
 
-          <!-- RENTA MENSUAL SEGURA (REGLA DEL 4%) -->
-          <div class="mt-5 p-4 rounded-xl bg-amber-50 border border-amber-200">
-            <div class="flex items-start gap-2.5">
-              <span class="text-lg">💡</span>
-              <div>
-                <p class="text-xs font-bold text-amber-900 uppercase tracking-wide">Renta mensual sostenible estimada (Regla 4%)</p>
-                <p class="text-xl font-extrabold text-amber-800 mt-0.5" id="resRentaMensual">0 € / mes</p>
-                <p class="text-xs text-amber-700 mt-1">Cantidad estimada que podrías retirar mensualmente de tu cartera sin agotar el capital.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+// EXPORTAR A EXCEL (.CSV)
+document.getElementById('downloadCsvBtn')?.addEventListener('click', function () {
+  const fecha = new Date().toLocaleDateString('es-ES');
+  let csv = "\uFEFF";
+  csv += "PLAN DE JUBILACION - CalculadoraRentabilidad.com\r\n";
+  csv += `Fecha;${fecha}\r\n\r\n`;
+  csv += "PARAMETRO;VALOR\r\n";
+  csv += `Edad actual;${$('edad_act').value} años\r\n`;
+  csv += `Edad prevista jubilación;${$('edad_jub').value} años\r\n`;
+  csv += `Capital inicial;${$('capital_ini').value} €\r\n`;
+  csv += `Aportación mensual;${$('ahorro_mes').value} €\r\n`;
+  csv += `Rentabilidad anual esperada;${$('rent_anual').value} %\r\n\r\n`;
+  csv += "PROYECCIÓN FINAL ALCANZADA;VALOR\r\n";
+  csv += `Patrimonio acumulado;${$('patrimonio_res').textContent}\r\n`;
+  csv += `Total aportado por ti;${$('aportado_res').textContent}\r\n`;
+  csv += `Intereses generados;${$('intereses_res').textContent}\r\n`;
 
-        <!-- TARJETA INFORMATIVA / VALOR -->
-        <!-- BANNER AFILIADO MYINVESTOR -->
-        <div class="panel p-5 bg-gradient-to-br from-emerald-900 to-slate-900 text-white border border-emerald-500/30 rounded-2xl shadow-sm">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 px-2.5 py-0.5 rounded-full border border-emerald-500/30">Plataforma recomendada</span>
-          </div>
-          <h3 class="text-base font-extrabold text-white">¿Dónde invertir en fondos indexados globales?</h3>
-          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
-            Para obtener la rentabilidad del mercado minimizando costes, MyInvestor ofrece las comisiones más bajas de España (Vanguard, iShares, Fidelity) sin comisiones de custodia ni traspaso.
-          </p>
-          <a href=" https://newapp.myinvestor.es/do/signup?promotionalCode=KXXGR" target="_blank" rel="sponsored noopener" class="mt-4 inline-flex items-center justify-center w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm py-2.5 px-4 rounded-xl transition duration-150 shadow-md">
-            Abrir cuenta sin comisiones en MyInvestor →
-          </a>
-          <p class="text-[10px] text-slate-400 mt-2 text-center">Enlace de colaborador / amigo. Inversión con riesgo de mercado.</p>
-        </div>
-        <div class="panel p-5 bg-slate-900 text-white border-slate-800">
-          <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-1">El poder del tiempo</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            En horizontes de más de 20 años, la mayor parte del capital final no proviene del dinero que tú ahorraste de tu sueldo, sino de los beneficios reinvertidos multiplicándose exponencialmente.
-          </p>
-        </div>
-
-      </section>
-
-    </div>
-
-    <!-- SECCIÓN CLAVES DE JUBILACIÓN (ESTILO HOMOGÉNEO A LA INMOBILIARIA) -->
-    <section class="mt-12" aria-label="Estrategias de jubilación">
-      <h2 class="text-2xl font-extrabold text-slate-900">Pilares para maximizar tu ahorro a largo plazo</h2>
-      <p class="text-slate-600 mt-1">Estrategias operativas clave para optimizar la rentabilidad de tu plan de retiro:</p>
-      
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-        <div class="panel p-4 block">
-          <h3 class="font-extrabold text-slate-900">Empezar pronto</h3>
-          <p class="text-sm mt-1 text-slate-600">Comenzar 5 años antes tiene más impacto en el saldo final acumulado que duplicar la cuota mensual más tarde.</p>
-        </div>
-        <div class="panel p-4 block">
-          <h3 class="font-extrabold text-slate-900">Costes y comisiones</h3>
-          <p class="text-sm mt-1 text-slate-600">Elegir fondos indexados con TER bajo (<0,30%) evita que las comisiones bancarias se coman hasta un 30% del patrimonio.</p>
-        </div>
-        <div class="panel p-4 block">
-          <h3 class="font-extrabold text-slate-900">Diferimiento fiscal</h3>
-          <p class="text-sm mt-1 text-slate-600">Aprovechar fondos traspasables permite cambiar de cartera sin tributar en IRPF hasta el reembolso final.</p>
-        </div>
-        <div class="panel p-4 block">
-          <h3 class="font-extrabold text-slate-900">Ajuste por inflación</h3>
-          <p class="text-sm mt-1 text-slate-600">Revisar e incrementar la aportación periódica un 2% anual protege el poder adquisitivo futuro de tu pensión.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PREGUNTAS FRECUENTES (SEO) -->
-    <section class="mt-12 max-w-3xl">
-      <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Preguntas Frecuentes sobre la Jubilación</h2>
-      <div class="space-y-3">
-        <details class="panel p-4">
-          <summary class="font-semibold text-slate-900 cursor-pointer">¿Qué rentabilidad media anual es realista introducir?</summary>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            Para carteras diversificadas globales en renta variable (tipo índice MSCI World o S&P 500), la rentabilidad media histórica nominal a largo plazo se sitúa en torno al 7%–9% anual (alrededor de un 5%–6% descontando la inflación). Para carteras mixtas o conservadoras se suele proyectar entre un 3% y un 5%.
-          </p>
-        </details>
-        <details class="panel p-4">
-          <summary class="font-semibold text-slate-900 cursor-pointer">¿Qué es la Regla del 4% para el retiro?</summary>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            Es una regla derivada de estudios financieros (Estudio Trinity) que indica que un jubilado con una cartera diversificada puede retirar un 4% del capital inicial el primer año (e ir ajustándolo por inflación los siguientes) con una probabilidad superior al 95% de no agotar su patrimonio durante 30 años.
-          </p>
-        </details>
-        <details class="panel p-4">
-          <summary class="font-semibold text-slate-900 cursor-pointer">¿Cómo tributa el dinero al rescatarlo en España?</summary>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            En fondos de inversión solo tributas por la ganancia patrimonial neta en la base del ahorro del IRPF al momento de vender participaciones (tramos del 19% al 28%). En los planes de pensiones tradicionales, todo lo rescatado tributa como rendimientos del trabajo en la base general.
-          </p>
-        </details>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- PIE DE PÁGINA IDÉNTICO AL PRINCIPAL -->
-  <footer class="bg-white border-t border-slate-200 mt-16 py-8 text-xs text-slate-500">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p>© 2026 CalculadoraRentabilidad.com · Herramienta informativa para simulación financiera.</p>
-      <div class="flex gap-4">
-        <a href="/aviso-legal.html" class="hover:underline">Aviso Legal</a>
-        <a href="/privacidad.html" class="hover:underline">Privacidad</a>
-        <a href="/cookies.html" class="hover:underline">Cookies</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- LÓGICA DE CÁLCULO JS -->
-  <script>
-    function calcularJubilacion() {
-      const edadActual = parseInt(document.getElementById('edadActual').value) || 0;
-      const edadJubilacion = parseInt(document.getElementById('edadJubilacion').value) || 0;
-      const capitalInicial = parseFloat(document.getElementById('capitalInicial').value) || 0;
-      const aportacionMensual = parseFloat(document.getElementById('aportacionMensual').value) || 0;
-      const interesAnual = (parseFloat(document.getElementById('interesAnual').value) || 0) / 100;
-
-      let anios = edadJubilacion - edadActual;
-      if (anios < 1) anios = 1;
-
-      const meses = anios * 12;
-      const tasaMensual = Math.pow(1 + interesAnual, 1 / 12) - 1;
-
-      // VF Capital Inicial = C0 * (1 + rm)^meses
-      const vfInicial = capitalInicial * Math.pow(1 + tasaMensual, meses);
-
-      // VF Aportaciones Mensuales
-      let vfAportaciones = 0;
-      if (tasaMensual > 0) {
-        vfAportaciones = aportacionMensual * ((Math.pow(1 + tasaMensual, meses) - 1) / tasaMensual);
-      } else {
-        vfAportaciones = aportacionMensual * meses;
-      }
-
-      const totalAcumulado = vfInicial + vfAportaciones;
-      const totalAportado = capitalInicial + (aportacionMensual * meses);
-      const totalIntereses = Math.max(0, totalAcumulado - totalAportado);
-
-      const porcAportado = totalAcumulado > 0 ? (totalAportado / totalAcumulado) * 100 : 0;
-      const porcIntereses = totalAcumulado > 0 ? (totalIntereses / totalAcumulado) * 100 : 0;
-
-      // Regla del 4% anual convertida a mensual
-      const rentaMensualSostenible = (totalAcumulado * 0.04) / 12;
-
-      // Formateo de moneda
-      const fmt = (n) => n.toLocaleString('es-ES', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + ' €';
-
-      document.getElementById('resAniosJubilacion').textContent = edadJubilacion;
-      document.getElementById('resPlazoAnios').textContent = anios;
-      document.getElementById('resTotalAcumulado').textContent = fmt(totalAcumulado);
-      document.getElementById('resTotalAportado').textContent = fmt(totalAportado);
-      document.getElementById('resPorcentajeAportado').textContent = `(${porcAportado.toFixed(1)}%)`;
-      document.getElementById('resTotalIntereses').textContent = fmt(totalIntereses);
-      document.getElementById('resPorcentajeIntereses').textContent = `(${porcIntereses.toFixed(1)}%)`;
-      document.getElementById('resRentaMensual').textContent = fmt(rentaMensualSostenible) + ' / mes';
-    }
-
-    // Escuchadores de eventos para cálculo dinámico en tiempo real
-    ['edadActual', 'edadJubilacion', 'capitalInicial', 'aportacionMensual', 'interesAnual'].forEach(id => {
-      document.getElementById(id).addEventListener('input', calcularJubilacion);
-    });
-
-    // Ejecución inicial al cargar la página
-    calcularJubilacion();
-  </script>
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `Plan_Jubilacion_${Date.now()}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+});
+</script>
 </body>
 </html>
