@@ -8,7 +8,7 @@
   <meta name="description" content="Compara la rentabilidad neta de un alquiler turístico (Airbnb) frente a uno tradicional en España: IRPF, comisiones, limpieza, suministros y ROI real. Resultados en tiempo real.">
   <link rel="canonical" href="https://calculadorarentabilidad.com/">
   
-  <!-- FAVICON CON TU LOGO OFICIAL -->
+  <!-- FAVICON OFICIAL -->
   <link rel="icon" type="image/png" href="/logo-perfil.png?v=3">
   <link rel="shortcut icon" type="image/png" href="/logo-perfil.png?v=3">
   <link rel="apple-touch-icon" href="/logo-perfil.png?v=3">
@@ -35,7 +35,7 @@
 <body>
 <a href="#res" class="skip-link">Ir al resultado</a>
 
-<!-- CABECERA CON LOGO REAL -->
+<!-- CABECERA -->
 <header class="border-b bg-white sticky top-0 z-30 shadow-sm" style="border-color:var(--line)">
   <div class="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between">
     <a href="/" class="disp font-extrabold text-lg flex items-center gap-2.5" style="color:var(--ink);text-decoration:none">
@@ -46,7 +46,7 @@
   </div>
 </header>
 
-<!-- SELECTOR CENTRAL GRANDE DE HERRAMIENTAS (3 CALCULADORAS) -->
+<!-- NAVEGACIÓN 3 HERRAMIENTAS (INMOBILIARIA ACTIVA) -->
 <section class="max-w-3xl mx-auto px-4 pt-6 pb-2" aria-label="Elegir calculadora">
   <div class="bg-slate-200/80 p-1.5 rounded-2xl flex flex-wrap sm:flex-nowrap items-center justify-center gap-2 shadow-inner border border-slate-300">
     <a href="/" class="flex-1 min-w-[140px] flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-extrabold text-sm bg-emerald-600 text-white shadow-md text-center transition">
@@ -85,7 +85,7 @@
       
       <div id="res"></div>
 
-      <!-- BOTONES DE EXPORTAR INFORME -->
+      <!-- BOTONES DE EXPORTAR -->
       <div class="mt-6 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-center gap-3">
         <button id="downloadPdfBtn" type="button" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-2.5 px-5 rounded-xl shadow-sm transition cursor-pointer">
           <span>📄</span>
@@ -201,7 +201,8 @@ $('form').innerHTML=GROUPS.map(([t,fs])=>`<h2 class="text-base font-extrabold mt
   <input type="range" id="${id}" min="${mn}" max="${mx}" step="${st}" value="${v}" class="w-full"></div>`).join('')).join('');
 
 IDS.forEach(id=>{
-  $(id).addEventListener('input',()=>{$(id+'_n').value=$(id).value;update()});$(id+'_n').addEventListener('input',()=>{$(id).value=$(id+'_n').value;update()});
+  $(id).addEventListener('input',()=>{$(id+'_n').value=$(id).value;update()});
+  $(id+'_n').addEventListener('input',()=>{$(id).value=$(id+'_n').value;update()});
 });
 $('red').addEventListener('change',update);
 
@@ -329,7 +330,7 @@ syncCkPad();
 $('yr').textContent=new Date().getFullYear();
 update();
 
-// --- EXPORTAR A EXCEL (.CSV) ---
+// EXPORTAR A EXCEL (.CSV)
 document.getElementById('downloadCsvBtn')?.addEventListener('click', function () {
   const v = read();
   const a = airbnb(v, v.ocupacion);
@@ -369,7 +370,7 @@ document.getElementById('downloadCsvBtn')?.addEventListener('click', function ()
   document.body.removeChild(link);
 });
 
-// --- EXPORTAR A PDF (VENTANA NATIVA LIMPIA) ---
+// EXPORTAR A PDF (IMPRESIÓN LIMPIA)
 document.getElementById('downloadPdfBtn')?.addEventListener('click', function () {
   window.print();
 });
