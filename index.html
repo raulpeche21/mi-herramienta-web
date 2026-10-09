@@ -92,6 +92,17 @@ input[type=range]{accent-color:var(--ink)}
            todo el bloque de resultados (tablas largas) en cada paso del deslizador. -->
       <p id="resStatus" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
       <div id="res"></div>
+      <!-- BOTONES DE EXPORTAR INFORME -->
+        <div class="mt-6 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-center gap-3">
+          <button id="downloadPdfBtn" type="button" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-2.5 px-4 rounded-xl shadow-sm transition cursor-pointer">
+            <span>📄</span>
+            <span>Descargar Informe PDF</span>
+          </button>
+          <button id="downloadCsvBtn" type="button" class="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm py-2.5 px-4 rounded-xl shadow-sm transition cursor-pointer">
+            <span>📊</span>
+            <span>Exportar a Excel (.CSV)</span>
+          </button>
+        </div>
 
       <!-- ADSENSE BANNER IN-CONTENT (336x280 / responsive): oculto hasta que haya un anuncio real activo. -->
       <div class="slot h-[280px] my-6 hidden" id="adMidWrap">
