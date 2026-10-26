@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculadora de Ahorro para la Jubilación e Interés Compuesto | CalculadoraRentabilidad.com</title>
-  <meta name="description" content="Calcula cuánto dinero acumularás para tu jubilación gracias al interés compuesto invirtiendo periódicamente en fondos indexados o planes de pensiones.">
+  <meta name="description" content="Calcula cuánto dinero acumularás para tu jubilación con interés compuesto invirtiendo en fondos indexados o planes de pensiones. Simula aportaciones y la Regla del 4%.">
   <link rel="canonical" href="https://calculadorarentabilidad.com/calculadora-jubilacion.html">
   
   <!-- FAVICON OFICIAL -->
@@ -20,6 +20,68 @@
     .panel{background:#fff;border:1px solid var(--line);border-radius:12px}
     input[type=range]{accent-color:#059669}
   </style>
+
+  <!-- ESQUEMA DE DATOS ESTRUCTURADOS (JSON-LD) PARA SEO Y ADSENSE -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calculadorarentabilidad.com/calculadora-jubilacion.html#app",
+        "url": "https://calculadorarentabilidad.com/calculadora-jubilacion.html",
+        "name": "Calculadora de Interés Compuesto y Plan de Jubilación",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Simulador financiero interactivo para proyectar el crecimiento exponencial del capital mediante interés compuesto, aportaciones periódicas en fondos indexados y estimación de renta vitalicia con la Regla del 4%.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calculadorarentabilidad.com/calculadora-jubilacion.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es la Regla del 4% y cómo calcula la renta mensual de jubilación?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La Regla del 4%, derivada del célebre Trinity Study, establece que un jubilado puede retirar el 4% de su patrimonio acumulado durante el primer año de retiro (e ir ajustando esa cifra a la inflación en los años posteriores) con una probabilidad superior al 95% de no agotar su dinero durante un periodo de 30 años."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo afecta el tiempo al cálculo del interés compuesto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El tiempo es la variable matemática más determinante en el interés compuesto. Al reinvertir anualmente los rendimientos obtenidos, los intereses generan nuevos intereses en una curva de crecimiento exponencial. Comenzar a ahorrar e invertir 10 años antes puede multiplicar por más de dos el patrimonio final."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué fiscalidad tienen los fondos de inversión al jubilarse en España?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En España, la fase de acumulación en fondos de inversión disfruta de diferimiento fiscal total gracias al régimen de traspasos sin tributación. Al llegar la jubilación, solo se tributa en la base imponible del ahorro del IRPF (entre el 19% y el 28%) por la plusvalía real obtenida en las retiradas parciales efectivas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué diferencia hay entre la rentabilidad nominal y la rentabilidad real ajustada por la inflación?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La rentabilidad nominal es el porcentaje bruto de ganancia que genera la inversión. La rentabilidad real descuenta la pérdida de poder adquisitivo provocada por la inflación (históricamente promediada en un 2% - 2,5% anual). Si una cartera rinde al 7% nominal y la inflación es del 2%, el rendimiento real es del 5%."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -133,7 +195,73 @@
     </section>
   </div>
 
-  <!-- SECCIÓN EDUCATIVA Y DE CONTENIDO (FUNDAMENTAL PARA ADSENSE) -->
+  <!-- GUÍA EDITORIAL AMPLIA Y ESTRUCTURADA DE ALTO VALOR (ADSENSE / SEO) -->
+  <article class="mt-16 pt-10 border-t border-slate-300 space-y-10 text-slate-800 leading-relaxed">
+    
+    <header class="space-y-3">
+      <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Guía de Inversión y Planificación Financiera para la Jubilación</h2>
+      <p class="text-lg text-slate-600">
+        Garantizar la tranquilidad económica durante el retiro exige construir un patrimonio privado complementario al sistema público de pensiones. Entender el funcionamiento de la capitalización compuesta y aplicar estrategias de inversión pasiva es la vía más sólida para alcanzar la independencia financiera.
+      </p>
+    </header>
+
+    <section class="space-y-4">
+      <h3 class="text-2xl font-bold text-slate-900">1. La Matemática del Interés Compuesto: La "Octava Maravilla"</h3>
+      <p>
+        El interés compuesto ocurre cuando las plusvalías y rendimientos generados por una inversión se suman al capital principal, comenzando a generar nuevos beneficios por sí mismos. A diferencia del interés simple (donde la ganancia se retira o permanece lineal), el interés compuesto genera una curva de crecimiento matemático <strong>exponencial</strong>.
+      </p>
+      
+      <div class="panel p-6 bg-slate-50 border-l-4 border-emerald-600 space-y-3">
+        <h4 class="font-bold text-slate-900">El Factor Tiempo como Multiplicador</h4>
+        <p class="text-sm text-slate-700">
+          En la fórmula matemática del interés compuesto, la variable con mayor impacto numérico es el número de periodos de capitalización (el tiempo). Por este motivo, empezar a invertir a los 25 años aportando 150 € al mes produce un patrimonio sustancialmente mayor al jubilarse que empezar a los 45 años aportando el triple (450 €/mes), aun cuando el desembolso total de bolsillo sea similar.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h3 class="text-2xl font-bold text-slate-900">2. Estrategia DCA (Dollar Cost Averaging) e Inversión Pasiva</h3>
+      <p>
+        Intentar predecir los momentos álgidos o las caídas del mercado (<i>market timing</i>) genera rendimientos inferiores en la inmensa mayoría de inversores minoristas. La metodología respaldada por la literatura financiera académica se fundamenta en dos principios:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-4">
+        <div class="panel p-5 bg-white border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900">Aportaciones Sistemáticas (DCA)</h4>
+          <p class="text-sm text-slate-700">
+            Consiste en automatizar la transferencia de un importe fijo mensual hacia la cartera de inversión, sin importar la coyuntura del mercado. En épocas de caídas bursátiles, el dinero compra más participaciones a precios descontados; en épocas alcistas, el patrimonio existente se revaloriza.
+          </p>
+        </div>
+
+        <div class="panel p-5 bg-white border border-slate-200 space-y-2">
+          <h4 class="font-bold text-slate-900">Gestión Pasiva con Indexación Global</h4>
+          <p class="text-sm text-slate-700">
+            Diversificar globalmente invirtiendo en índices de mercado amplio (como el <i>MSCI World</i> o el <i>S&P 500</i>) mediante fondos indexados o ETFs. Estos vehículos tienen costes de gestión mínimos (comisiones habituales del 0,10% al 0,25%), eliminando el riesgo de quiebra de empresas individuales.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h3 class="text-2xl font-bold text-slate-900">3. La Regla del 4% y la Fase de Desacumulación</h3>
+      <p>
+        Construir el patrimonio es la primera fase; la segunda consiste en convertir ese capital acumulado en un flujo de caja permanente durante el retiro sin riesgo de agotar el saldo disponible.
+      </p>
+      <p>
+        Establecida a partir del famoso estudio empírico de la Universidad de Trinity (<i>Trinity Study</i>), la <strong>Regla del 4%</strong> concluye que si un inversor retira en su primer año de jubilación el 4% de su cartera total diversificada (e incrementa esa cantidad fija en años posteriores ajustándola a la inflación), la probabilidad de que el capital dure más de 30 años se sitúa por encima del 95%.
+      </p>
+    </section>
+
+    <section class="space-y-4">
+      <h3 class="text-2xl font-bold text-slate-900">4. Ventajas Fiscales en España: El Traspaso entre Fondos</h3>
+      <p>
+        A diferencia de las acciones directas, dividendos o bienes inmuebles (donde cada cobro o venta genera una tributación inmediata en el IRPF), en España los <strong>fondos de inversión de acumulación</strong> disfrutan del diferimiento fiscal por traspaso. Es posible cambiar de fondo o rebalancear la cartera sin pagar impuestos por las plusvalías latentes hasta el momento en que se retira definitivamente el dinero a la cuenta corriente en la jubilación.
+      </p>
+    </section>
+
+  </article>
+
+  <!-- SECCIÓN EDUCATIVA Y DE CONTENIDO -->
   <section class="mt-12 space-y-8 border-t pt-10" style="border-color:var(--line)">
     <div>
       <h2 class="text-2xl font-extrabold">Estrategias de inversión a largo plazo para la jubilación</h2>
@@ -156,7 +284,7 @@
         <p class="text-sm mt-1 text-slate-600">Vehículos de inversión colectiva pasivos que replican índices globales (MSCI World, S&P 500) con comisiones anuales mínimas (por debajo del 0,25%).</p>
       </div>
       <div class="panel p-4">
-        <h3 class="font-extrabold text-slate-900">La Regla del 4% (Trinidad Study)</h3>
+        <h3 class="font-extrabold text-slate-900">La Regla del 4% (Trinity Study)</h3>
         <p class="text-sm mt-1 text-slate-600">Tasa de retirada anual segura histórica que permite vivir del capital acumulado durante la jubilación sin agotar el patrimonio principal.</p>
       </div>
     </div>
