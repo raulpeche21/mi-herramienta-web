@@ -31,6 +31,68 @@
     .skip-link:focus{top:8px}
     .tap-target{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;padding:8px 14px}
   </style>
+
+  <!-- ESQUEMA DE DATOS ESTRUCTURADOS (JSON-LD) PARA ADSENSE / SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calculadorarentabilidad.com/#app",
+        "url": "https://calculadorarentabilidad.com/",
+        "name": "Calculadora de Rentabilidad Inmobiliaria: Airbnb vs Alquiler Tradicional",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Simulador financiero interactivo para calcular la rentabilidad neta real de alquiler vacacional frente a alquiler de larga estancia en España, considerando IRPF, reducciones fiscales, comisiones y gastos operativos.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calculadorarentabilidad.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cómo calcula esta herramienta el beneficio neto de un alquiler vacacional (Airbnb)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La calculadora multiplica el número de noches ocupadas por el precio por noche para obtener los ingresos brutos. Posteriormente descuenta la comisión de la plataforma, los gastos de limpieza por estancia, los suministros mensuales, los costes de gestión externa y los gastos fijos anuales (IBI, comunidad, seguros). Finalmente aplica el tipo marginal de IRPF sobre el rendimiento neto resultante."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Por qué el alquiler tradicional tiene un trato fiscal preferencial frente al vacacional?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En España, los rendimientos netos del alquiler de vivienda habitual disfrutan de una reducción general en el IRPF del 50% (ampliable hasta el 90% en zonas de mercado residencial tensionado bajo determinados supuestos según la Ley por el Derecho a la Vivienda). El alquiler turístico o de corta estancia se considera arrendamiento de uso distinto a vivienda, por lo que tributa al 100% del rendimiento neto sin reducción estatal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué representa el dato de la Ocupación de Equilibrio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La Ocupación de Equilibrio (Break-Even Occupancy) representa el porcentaje exacto de días al año que debe estar alquilado el inmueble turístico para generar exactamente la misma ganancia neta anual (después de impuestos) que el alquiler tradicional. Si tu ocupación prevista está por debajo de esa cifra, la inversión en larga estancia es financieramente superior y requiere menor carga de trabajo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué tributación de IVA o IGIC aplica en el alquiler de vivienda en España?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El alquiler tradicional para vivienda habitual está exento de IVA. En el alquiler turístico, si el propietario no presta servicios propios de la industria hotelera (recepción, limpieza periódica durante la estancia, restauración), tampoco lleva IVA y tributa en IRPF como rendimiento del capital inmobiliario. Si prestara servicios hoteleros, tributaría al 10% de IVA como actividad económica."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 <a href="#res" class="skip-link">Ir al resultado</a>
@@ -103,6 +165,7 @@
     </section>
   </div>
 
+  <!-- CLAVES OPERATIVAS -->
   <section class="mt-10" aria-label="Claves para maximizar beneficio">
     <h2 class="text-2xl font-extrabold">Claves para maximizar tu beneficio neto</h2>
     <p class="text-slate-600 mt-1">Factores operativos esenciales que impactan directamente en la rentabilidad real de tu inmueble:</p>
@@ -126,17 +189,137 @@
     </div>
   </section>
 
-  <section class="mt-12 max-w-3xl">
-    <h2 class="text-2xl font-extrabold">Cómo interpretar la comparación</h2>
+  <!-- GUÍA EDITORIAL EDITORIAL AMPLIA Y ESTRUCTURADA (CONTENIDO DE ALTO VALOR PARA ADSENSE) -->
+  <article class="mt-16 pt-10 border-t border-slate-300 space-y-10 text-slate-800 leading-relaxed">
+    
+    <header class="space-y-3">
+      <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Guía de Inversión Inmobiliaria en España: Alquiler Vacacional vs. Larga Estancia</h2>
+      <p class="text-lg text-slate-600">
+        Evaluar la rentabilidad real de una propiedad inmobiliaria requiere ir mucho más allá del cálculo bruto de ingresos por alquiler. En el panorama fiscal y legislativo español actual, la diferencia entre la rentabilidad nominal y la rentabilidad neta libre de impuestos determina el éxito financiero de cualquier activo inmobiliario.
+      </p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="panel p-6 bg-white space-y-3">
+        <h3 class="text-xl font-bold text-emerald-800 flex items-center gap-2">
+          <span>🏠</span> Alquiler Tradicional (Larga Duración)
+        </h3>
+        <p class="text-sm text-slate-600">
+          Orientado a la cesión del inmueble como vivienda habitual del inquilino regulado por la Ley de Arrendamientos Urbanos (LAU).
+        </p>
+        <ul class="text-sm space-y-2 list-disc list-inside text-slate-700 pt-2">
+          <li><strong>Ingresos estables:</strong> Flujo de caja constante y predecible durante contratos de 5 a 7 años.</li>
+          <li><strong>Costes operativos reducidos:</strong> El inquilino asume los suministros (luz, agua, gas, internet).</li>
+          <li><strong>Mantenimiento bajo:</strong> Menor desgaste estructural y rotación de inquilinos.</li>
+          <li><strong>Ventaja fiscal clave:</strong> Reducción en el IRPF del 50% sobre el rendimiento neto (ampliable en zonas tensionadas).</li>
+        </ul>
+      </div>
+
+      <div class="panel p-6 bg-white space-y-3">
+        <h3 class="text-xl font-bold text-amber-800 flex items-center gap-2">
+          <span>🏖️</span> Alquiler Turístico o Corta Estancia (Airbnb / Booking)
+        </h3>
+        <p class="text-sm text-slate-600">
+          Orientado al arrendamiento por días, semanas o meses sin finalidad de residencia permanente.
+        </p>
+        <ul class="text-sm space-y-2 list-disc list-inside text-slate-700 pt-2">
+          <li><strong>Facturación bruta elevada:</strong> Tarifas por noche muy superiores al prorrateo diario del alquiler mensual.</li>
+          <li><strong>Riesgo de impago cero:</strong> Cobro garantizado por plataformas antes de la entrada del cliente.</li>
+          <li><strong>Mayor flexibilidad:</strong> Posibilidad de ajustar precios por temporada y utilizar la vivienda.</li>
+          <li><strong>Alta carga operativa:</strong> Limpiezas frecuentes, lavandería, rotación, suministros a cargo de la propiedad y comisiones del 15%-20%.</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="space-y-4">
+      <h3 class="text-2xl font-bold text-slate-900">1. Fiscalidad en España: La importancia del IRPF</h3>
+      <p>
+        El impacto impositivo es la variable que más distorsiona la comparativa entre modalidades de alquiler. En España, los ingresos obtenidos por el arrendamiento de inmuebles por personas físicas tributan en la base imponible general del IRPF como <strong>Rendimientos del Capital Inmobiliario</strong>:
+      </p>
+      
+      <div class="panel p-6 bg-slate-50 border-l-4 border-emerald-600 space-y-3">
+        <h4 class="font-bold text-slate-900">Rendimiento Neto en Alquiler Tradicional</h4>
+        <p class="text-sm text-slate-700">
+          Se deducen de los ingresos brutos todos los gastos necesarios para la obtención de los ingresos (IBI, comunidad, tasa de basuras, seguros, intereses de hipoteca, reparaciones y la amortización del 3% de la construcción). Sobre esa diferencia positiva, el propietario aplica una <strong>reducción estatal del 50%</strong>. Es decir, solo la mitad del beneficio neto tributa al tipo marginal de su IRPF (entre el 19% y el 47%).
+        </p>
+      </div>
+
+      <div class="panel p-6 bg-slate-50 border-l-4 border-amber-600 space-y-3">
+        <h4 class="font-bold text-slate-900">Rendimiento Neto en Alquiler Turístico</h4>
+        <p class="text-sm text-slate-700">
+          Aunque se deducen los gastos operativos (incluyendo limpiezas, suministros y comisiones), el rendimiento neto resultante <strong>tributa integramente al 100%</strong> en la declaración de la renta. No aplica ninguna reducción por vivienda habitual al no estar destinado a satisfacer la necesidad permanente de vivienda.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h3 class="text-2xl font-bold text-slate-900">2. El concepto de Ocupación de Equilibrio (Break-Even)</h3>
+      <p>
+        Debido a los costes variables continuos (limpieza por cada rotación, sustitución de enseres, comisiones de plataformas intermediarias) y a la falta de reducciones fiscales, un inmueble turístico no empieza a ser más rentable que uno tradicional desde el primer día.
+      </p>
+      <p>
+        La <strong>Ocupación de Equilibrio</strong> calcula el umbral de noches reservadas al año necesario para que la mayor facturación bruta del Airbnb compense exactamente sus elevados costes fijos/variables y la penalización fiscal. Si la tasa media de ocupación de tu zona geográfica (consultable en agregadores como AirDNA) es inferior al punto de equilibrio calculado por nuestro simulador, el alquiler tradicional ofrecerá un flujo financiero más holgado y sin dedicación horaria.
+      </p>
+    </section>
+
+    <section class="space-y-4">
+      <h3 class="text-2xl font-bold text-slate-900">3. Matriz de Gastos Deducibles</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border border-slate-300 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100 text-slate-900 font-bold">
+            <tr>
+              <th class="p-3 text-left border-b">Concepto de Gasto</th>
+              <th class="p-3 text-center border-b">Alquiler Tradicional</th>
+              <th class="p-3 text-center border-b">Alquiler Turístico (Airbnb)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-700">
+            <tr>
+              <td class="p-3 font-semibold">IBI, Basuras y Comunidad</td>
+              <td class="p-3 text-center text-emerald-700 font-bold">100% Deducible</td>
+              <td class="p-3 text-center text-emerald-700 font-bold">100% Deducible</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Suministros (Luz, Agua, Gas)</td>
+              <td class="p-3 text-center text-slate-400">No aplica (Inquilino)</td>
+              <td class="p-3 text-center text-emerald-700 font-bold">100% Deducible</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Comisión de Gestión / Plataformas</td>
+              <td class="p-3 text-center text-emerald-700 font-bold">Deducible (si hay agencia)</td>
+              <td class="p-3 text-center text-emerald-700 font-bold">100% Deducible</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Limpieza y Lavandería</td>
+              <td class="p-3 text-center text-slate-400">No aplica</td>
+              <td class="p-3 text-center text-emerald-700 font-bold">100% Deducible</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Reducción del 50% en IRPF</td>
+              <td class="p-3 text-center text-emerald-700 font-bold">SÍ (Vivienda Habitual)</td>
+              <td class="p-3 text-center text-red-600 font-bold">NO</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section class="mt-12 max-w-3xl" aria-label="Preguntas Frecuentes">
+    <h2 class="text-2xl font-extrabold">Preguntas Frecuentes sobre Rentabilidad e Impuestos</h2>
     <div class="mt-4 space-y-3">
       <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Cómo calcula la calculadora el beneficio neto del Airbnb?</summary>
-        <p class="mt-2 text-slate-700">Ingresos = noches ocupadas × precio por noche. Se restan la comisión de la plataforma, la limpieza por cada estancia, los suministros, la gestión, el IBI, la comunidad y el seguro. Sobre el beneficio resultante se aplica el tipo de IRPF que indiques.</p></details>
+        <p class="mt-2 text-slate-700">Ingresos = noches ocupadas × precio por noche. Se restan la comisión de la plataforma, la limpieza por cada estancia, los suministros, la gestión, el IBI, la comunidad y el seguro. Sobre el beneficio resultante se aplica el tipo marginal de IRPF que indiques.</p></details>
       <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Por qué el alquiler tradicional tributa menos?</summary>
         <p class="mt-2 text-slate-700">En España, el arrendamiento de vivienda habitual puede aplicar una reducción del 50% (o mayor en zonas tensionadas) sobre el rendimiento neto. El alquiler turístico no suele tener esa reducción, por lo que el Airbnb necesita más ocupación para compensarlo.</p></details>
       <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Qué es la ocupación de equilibrio?</summary>
         <p class="mt-2 text-slate-700">Es el porcentaje de ocupación a partir del cual el alquiler turístico iguala el neto anual del tradicional. Si tu ocupación realista está por debajo, el alquiler tradicional es la opción más rentable y con menos trabajo.</p></details>
+      <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Cómo afecta la amortización del inmueble en la declaración del IRPF?</summary>
+        <p class="mt-2 text-slate-700">Tanto en alquiler tradicional como en vacacional, Hacienda permite deducir el 3% del valor de construcción del inmueble (excluyendo el valor del suelo) en concepto de amortización. Esto reduce sustancialmente la base imponible previa al cálculo final de impuestos.</p></details>
       <details class="panel p-4"><summary class="font-semibold cursor-pointer">¿Qué no incluye este cálculo?</summary>
-        <p class="mt-2 text-slate-700">No incluye IVA, amortización del inmueble, licencias autonómicas o municipales, tasas turísticas, financiación ni tu trabajo personal. Los resultados son orientativos: consulta a un asesor fiscal antes de decidir.</p></details>
+        <p class="mt-2 text-slate-700">No incluye IVA, amortización exacta del inmueble, licencias autonómicas o municipales, tasas turísticas locales, costes de financiación hipotecaria ni la valoración económicamente computable de tu tiempo personal de gestión. Los resultados son orientativos: consulta a un asesor fiscal antes de tomar decisiones de inversión.</p></details>
     </div>
   </section>
 </main>
